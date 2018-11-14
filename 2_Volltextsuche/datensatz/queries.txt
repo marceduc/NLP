@@ -1,0 +1,12 @@
+abstract:"set of biomarkers"
+title:eel AND year:2006
+abstract:treatment AND title:men AND mesh:ADULT
+mesh:"Alzheimer Disease" AND title:rna
+abstract:protein-protein AND abstract:interaction AND abstract:classification
+abstract:network AND abstract:"plasma membrane (PM)"
+mesh:"AMINO acid" AND year:2010
+abstract:gene AND abstract:protein AND abstract:cancer AND year:2010
+title:cancer AND title:therapy AND abstract:death AND year:2015
+title:"breast, cancer" AND abstract:metastatic AND abstract:cell AND abstract:"mortality"
+mesh:mice AND abstract:"virus infection" AND abstract:"gene expression"
+mesh:"Signal Transducing" AND mesh:Tumor AND title:cancer

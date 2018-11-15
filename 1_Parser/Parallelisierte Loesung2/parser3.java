@@ -3,7 +3,13 @@ package test;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.text.NumberFormat;
 
 import javax.xml.parsers.SAXParser;
@@ -14,15 +20,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class parser3 {
 
-	public static List<String> wordList = new ArrayList<String>();
-	public static List<String> yearList = new ArrayList<String>();
-	public static List<String> titleList = new ArrayList<String>();
-	public static List<String> meshList = new ArrayList<String>();
-
-	public static List<Integer> anzahlWordList = new ArrayList<Integer>();
-	public static List<Integer> anzahlYearList = new ArrayList<Integer>();
-	public static List<Integer> anzahlTitleList = new ArrayList<Integer>();
-	public static List<Integer> anzahlMeshList = new ArrayList<Integer>();
+	public static HashMap<String, Integer> wL = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> yL = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> tL = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> mL = new HashMap<String, Integer>();
 
 	public static int articleCount = 0;
 	public static double wordCount = 0;
@@ -59,6 +60,11 @@ public class parser3 {
 			e.printStackTrace();
 		}
 
+		HashMap<String, Integer> wLs = sortByValue(wL);
+		HashMap<String, Integer> yLs = sortByValue(yL);
+		HashMap<String, Integer> tLs = sortByValue(tL);
+		HashMap<String, Integer> mLs = sortByValue(mL);
+
 		// Variablen für Ausgabe
 		int ind;
 		String wordE;
@@ -76,102 +82,103 @@ public class parser3 {
 		System.out.println("Artikel: " + articleCount);
 
 		// Ausgabe: Wörterliste
-		System.out.println("Wörter: " + (int) wordCount + " (" + wordList.size() + " distinct)");
+		System.out.println("Wörter: " + (int) wordCount + " (" + wL.size() + " distinct)");
 
-		for (int i = 0; i < 50; i++) {
+		int i = 0;
 
-			if (wordList.isEmpty())
+		for (HashMap.Entry<String, Integer> e : wLs.entrySet()) {
+
+			anzahlP = " (" + nf.format(e.getValue() / wordCount * 100) + " %)";
+			top += e.getValue();
+			System.out.println(e.getKey() + " : " + e.getValue() + anzahlP);
+
+			if (i == 49)
 				break;
-			ind = anzahlWordList.indexOf(Collections.max(anzahlWordList));
-			wordE = wordList.get(ind);
-			anzahl = anzahlWordList.get(ind);
-			top += anzahl;
-			anzahlP = " (" + nf.format(anzahl / wordCount * 100) + " %)";
-
-			System.out.println(wordE + " : " + anzahl + anzahlP);
-
-			anzahlWordList.remove(ind);
-			wordList.remove(ind);
-
+			i++;
 		}
 
 		topP = "Top50 : " + (int) top + " (" + nf.format(top / wordCount * 100) + " %)";
 		System.out.println(topP);
 		top = 0;
+		i = 0;
 		System.out.println("");
 
 		// Ausgabe Jahreszahlen
-		System.out.println("Jahresangaben: " + (int) yearCount + " (" + yearList.size() + " distinct)");
+		System.out.println("Jahresangaben: " + (int) yearCount + " (" + yL.size() + " distinct)");
 
-		for (int i = 0; i < 10; i++) {
+		for (HashMap.Entry<String, Integer> e : yLs.entrySet()) {
 
-			if (yearList.isEmpty())
+			anzahlP = " (" + nf.format(e.getValue() / yearCount * 100) + " %)";
+			top += e.getValue();
+			System.out.println(e.getKey() + " : " + e.getValue() + anzahlP);
+
+			if (i == 9)
 				break;
-			ind = anzahlYearList.indexOf(Collections.max(anzahlYearList));
-			wordE = yearList.get(ind);
-			anzahl = anzahlYearList.get(ind);
-			top += anzahl;
-			anzahlP = " (" + nf.format(anzahl / yearCount * 100) + " %)";
-
-			System.out.println(wordE + " : " + anzahl + anzahlP);
-
-			anzahlYearList.remove(ind);
-			yearList.remove(ind);
+			i++;
 		}
 
 		topP = "Top10 : " + (int) top + " (" + nf.format(top / yearCount * 100) + " %)";
 		System.out.println(topP);
 		top = 0;
+		i = 0;
 		System.out.println("");
 
 		// Ausgabe Journaltitel
-		System.out.println("Journale: " + (int) titleCount + " (" + titleList.size() + " distinct)");
+		System.out.println("Journale: " + (int) titleCount + " (" + tL.size() + " distinct)");
 
-		for (int i = 0; i < 10; i++) {
+		for (HashMap.Entry<String, Integer> e : tLs.entrySet()) {
 
-			if (titleList.isEmpty())
+			anzahlP = " (" + nf.format(e.getValue() / titleCount * 100) + " %)";
+			top += e.getValue();
+			System.out.println(e.getKey() + " : " + e.getValue() + anzahlP);
+
+			if (i == 9)
 				break;
-			ind = anzahlTitleList.indexOf(Collections.max(anzahlTitleList));
-			wordE = titleList.get(ind);
-			anzahl = anzahlTitleList.get(ind);
-			top += anzahl;
-			anzahlP = " (" + nf.format(anzahl / titleCount * 100) + " %)";
-
-			System.out.println(wordE + " : " + anzahl + anzahlP);
-
-			anzahlTitleList.remove(ind);
-			titleList.remove(ind);
-
+			i++;
 		}
 
 		topP = "Top10 : " + (int) top + " (" + nf.format(top / titleCount * 100) + " %)";
 		System.out.println(topP);
 		top = 0;
+		i = 0;
 		System.out.println("");
 
 		// Ausgabe MeSH
-		System.out.println("MesH: " + (int) meshCount + " (" + meshList.size() + " distinct)");
+		System.out.println("MesH: " + (int) meshCount + " (" + mL.size() + " distinct)");
 
-		for (int i = 0; i < 10; i++) {
+		for (HashMap.Entry<String, Integer> e : mLs.entrySet()) {
 
-			if (meshList.isEmpty())
+			anzahlP = " (" + nf.format(e.getValue() / meshCount * 100) + " %)";
+			top += e.getValue();
+			System.out.println(e.getKey() + " : " + e.getValue() + anzahlP);
+
+			if (i == 9)
 				break;
-			ind = anzahlMeshList.indexOf(Collections.max(anzahlMeshList));
-			wordE = meshList.get(ind);
-			anzahl = anzahlMeshList.get(ind);
-			top += anzahl;
-			anzahlP = " (" + nf.format(anzahl / meshCount * 100) + " %)";
-
-			System.out.println(wordE + " : " + anzahl + anzahlP);
-
-			anzahlMeshList.remove(ind);
-			meshList.remove(ind);
-
+			i++;
 		}
 
 		topP = "Top10 : " + (int) top + " (" + nf.format(top / meshCount * 100) + " %)";
 		System.out.println(topP);
 
+	}
+
+	public static HashMap<String, Integer> sortByValue(HashMap<String, Integer> hm) {
+		// Create a list from elements of HashMap
+		List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>(hm.entrySet());
+
+		// Sort the list
+		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+				return (o2.getValue()).compareTo(o1.getValue());
+			}
+		});
+
+		// put data from sorted list to hashmap
+		HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
+		for (Map.Entry<String, Integer> aa : list) {
+			temp.put(aa.getKey(), aa.getValue());
+		}
+		return temp;
 	}
 
 	// Klasse zum Parsen nach Wörter
@@ -242,7 +249,6 @@ public class parser3 {
 			@Override
 			public void characters(char ch[], int start, int length) throws SAXException {
 
-				int ind;
 				int anzahl;
 
 				if (ArticleTitle) {
@@ -253,16 +259,14 @@ public class parser3 {
 
 					for (String word : words) {
 
-						if (wordList.contains(word)) {
+						if (wL.containsKey(word)) {
 
-							ind = wordList.indexOf(word);
-							anzahl = anzahlWordList.get(ind) + 1;
-							anzahlWordList.set(ind, anzahl);
+							anzahl = wL.get(word) + 1;
+							wL.put(word, anzahl);
 
 						} else {
 
-							wordList.add(word);
-							anzahlWordList.add(1);
+							wL.put(word, 1);
 
 						}
 
@@ -280,16 +284,14 @@ public class parser3 {
 
 					for (String word : words) {
 
-						if (wordList.contains(word)) {
+						if (wL.containsKey(word)) {
 
-							ind = wordList.indexOf(word);
-							anzahl = anzahlWordList.get(ind) + 1;
-							anzahlWordList.set(ind, anzahl);
+							anzahl = wL.get(word) + 1;
+							wL.put(word, anzahl);
 
 						} else {
 
-							wordList.add(word);
-							anzahlWordList.add(1);
+							wL.put(word, 1);
 
 						}
 
@@ -368,34 +370,32 @@ public class parser3 {
 				if (found == true && yearormedline == true) {
 
 					String year = new String(ch, start, length);
-					
+
 					if (year.length() > 4) {
-						
-						if (year.substring(4,5).equals("-") == false) {
-							
-							year = year.substring(0,4);
-							
+
+						if (year.substring(4, 5).equals("-") == false) {
+
+							year = year.substring(0, 4);
+
 						}
 					}
-					
-					if (year == "") return;
-					int ind;
+
+					if (year == "")
+						return;
 					int anzahl;
 
 					// Journal: Jahreszahlen
 
 					yearCount += 1;
 
-					if (yearList.contains(year)) {
+					if (yL.containsKey(year)) {
 
-						ind = yearList.indexOf(year);
-						anzahl = anzahlYearList.get(ind) + 1;
-						anzahlYearList.set(ind, anzahl);
+						anzahl = yL.get(year) + 1;
+						yL.put(year, anzahl);
 
 					} else {
 
-						yearList.add(year);
-						anzahlYearList.add(1);
+						yL.put(year, 1);
 
 					}
 
@@ -457,22 +457,19 @@ public class parser3 {
 
 				if (found) {
 
-					int ind;
 					int anzahl;
 
 					String title = new String(ch, start, length);
 					titleCount += 1;
 
-					if (titleList.contains(title)) {
+					if (tL.containsKey(title)) {
 
-						ind = titleList.indexOf(title);
-						anzahl = anzahlTitleList.get(ind) + 1;
-						anzahlTitleList.set(ind, anzahl);
+						anzahl = tL.get(title) + 1;
+						tL.put(title, anzahl);
 
 					} else {
 
-						titleList.add(title);
-						anzahlTitleList.add(1);
+						tL.put(title, 1);
 
 					}
 
@@ -541,20 +538,20 @@ public class parser3 {
 
 				if (qName == "MeshHeading") {
 
+					int anzahl = 0;
+
 					if (qualifierList.isEmpty()) {
 
 						meshCount += 1;
 
-						if (meshList.contains(descriptor)) {
+						if (mL.containsKey(descriptor)) {
 
-							int ind = meshList.indexOf(descriptor);
-							int anzahl = anzahlMeshList.get(ind) + 1;
-							anzahlMeshList.set(ind, anzahl);
+							anzahl = mL.get(descriptor) + 1;
+							mL.put(descriptor, anzahl);
 
 						} else {
 
-							meshList.add(descriptor);
-							anzahlMeshList.add(1);
+							mL.put(descriptor, 1);
 
 						}
 
@@ -565,16 +562,14 @@ public class parser3 {
 							String mesh = descriptor + "//" + qual;
 							meshCount += 1;
 
-							if (meshList.contains(mesh)) {
+							if (mL.containsKey(mesh)) {
 
-								int ind = meshList.indexOf(mesh);
-								int anzahl = anzahlMeshList.get(ind) + 1;
-								anzahlMeshList.set(ind, anzahl);
+								anzahl = mL.get(mesh) + 1;
+								mL.put(mesh, anzahl);
 
 							} else {
 
-								meshList.add(mesh);
-								anzahlMeshList.add(1);
+								mL.put(mesh, 1);
 
 							}
 

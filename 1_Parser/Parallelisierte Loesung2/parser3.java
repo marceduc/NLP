@@ -66,9 +66,6 @@ public class parser3 {
 		HashMap<String, Integer> mLs = sortByValue(mL);
 
 		// Variablen für Ausgabe
-		int ind;
-		String wordE;
-		int anzahl;
 		int top = 0;
 		String anzahlP;
 		String topP;

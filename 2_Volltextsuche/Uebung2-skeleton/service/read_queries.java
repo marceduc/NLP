@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-//reads in queries, returns list of HashMaps = {tag:[word1,word2,...]} 
+//reads in queries, returns list of HashMaps = {tag:[word1,word2,...]}
 public class read_queries {
 
 	public static void main(String[] args) {
@@ -32,15 +32,29 @@ public class read_queries {
 					// Always close files.
 					bufferedReader.close();
 
-					for(int i = 0;i < lines.size();i++){
-					System.out.println(lines.get(i));
+				}
+				catch(FileNotFoundException ex) {
+						System.out.println(
+								"Unable to open file '" +
+								fileName + "'");
+				}
+				catch(IOException ex) {
+						System.out.println(
+								"Error reading file '"
+								+ fileName + "'");
+						// Or we could just do this:
+						// ex.printStackTrace();
 				}
 
-				String query = lines.get(4);
+				//String query = lines.get(4);
+				line = lines.get(4);
 				System.out.println("testetestetetstses");
-				System.out.println(query);
+				System.out.println(line);
+				Map<String, ArrayList<String>> query = line_to_query(line);
 
-				//HashMap<String, ArrayList> query_dic = new HashMap<String, Arraylist>();
+      }
+
+			public static Map<String, ArrayList<String>> line_to_query(String line){
 
 				HashMap<String, ArrayList<String>> query_dic = new HashMap<String, ArrayList<String>>();
 				ArrayList<String> searchTerms = new ArrayList<String>();
@@ -48,11 +62,11 @@ public class read_queries {
 
 				//ArrayList current = dictMap.get(dictCode);
 
-				for (String retval: query.split(" AND ")) {
+				for (String retval: line.split(" AND ")) {
 					String tag = retval.split(":")[0];
 					String phrase = retval.split(":")[1];
 
-	        System.out.println("search tag:" + tag);
+					System.out.println("search tag:" + tag);
 
 					if (query_dic.containsKey(tag)) {
 						System.out.println(tag + "exists");
@@ -70,25 +84,16 @@ public class read_queries {
 						 query_dic.put(tag,searchTerms);
 					 }
 
+					 for (String name: query_dic.keySet()){
 
-	      }
+						String key =name.toString();
+						String value = query_dic.get(name).toString();
+						System.out.println(key + " " + value);
+					}
+				}
+				return query_dic;
+
+			}
 
 
-
-      }
-      catch(FileNotFoundException ex) {
-          System.out.println(
-              "Unable to open file '" +
-              fileName + "'");
-      }
-      catch(IOException ex) {
-          System.out.println(
-              "Error reading file '"
-              + fileName + "'");
-          // Or we could just do this:
-          // ex.printStackTrace();
-      }
   }
-
-
-}

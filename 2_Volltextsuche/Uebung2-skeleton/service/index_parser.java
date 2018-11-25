@@ -13,7 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class index_parser {
 
-	// Key = Word, Jahr, Descriptor || Value = PMID,PMID,PMID, ....
+	// Key = Word, Jahr, Descriptor || Key = PMID, Value = Position
 	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> titleWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
 	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> abstractWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
 	public static HashMap<String, ArrayList<Integer>> yearL = new HashMap<String, ArrayList<Integer>>();
@@ -168,7 +168,7 @@ public class index_parser {
 				if (ArticleTitle) {
 
 					String line = new String(ch, start, length).toLowerCase();
-					String[] tokens = line.split("[\\s+.,:?!]");
+					String[] tokens = line.split("[\\s+.,:?!]+");
 
 					for (String token : tokens) {
 
@@ -292,7 +292,7 @@ public class index_parser {
 				if (ArticleAbs) {
 
 					String line = new String(ch, start, length).toLowerCase();
-					String[] tokens = line.split("[\\s+.,:?!]");
+					String[] tokens = line.split("[\\s+.,:?!]+");
 
 					for (String token : tokens) {
 
@@ -554,14 +554,14 @@ public class index_parser {
 				if (dName) {
 
 					descriptor = new String(ch, start, length).toLowerCase();
-					String[] tokens = descriptor.split("[\\s+.,:?!]");
+					String[] tokens = descriptor.split("[\\s+.,:?!]+");
 					
 					for (String token : tokens) {
 						
 						index += 1;
 						
 						if (meshWL.containsKey(token)) {
-							
+						
 							HashMap<Integer, ArrayList<Integer>> hm = meshWL.get(token);
 
 							if (hm.containsKey(pmid)) {

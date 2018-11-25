@@ -39,75 +39,56 @@ public class PubMedSearchEngineImpl implements PubMedSearchEngine {
 		// Ergebnissliste
 		HashSet<Integer> results = new HashSet<Integer>();
 
-		// Splitten der Anfrage in Subanfragen
-		if (query.contains("AND")) {
-
-			String[] sub_queries = query.split(" AND ");
-
-			// Für jede Subanfrage do....
-			for (String sub_query : sub_queries) {
-
-				// Entscheide ob Subanfrage Term- oder Phrasenanfrage ist
-				if (!sub_query.contains("\"")) {
-
-					String[] split = sub_query.toLowerCase().split(":");
-					String field = split[0];
-					String term = split[1];
-
-					if (results.isEmpty()) {
-
-						results = getIDSforTerm(field, term);
-
-					} else {
-
-						results = mergeSets(results, getIDSforTerm(field, term));
-					}
-
-				} else {
-
-					String[] split = sub_query.toLowerCase().split(":");
-					String field = split[0];
-					String phrase = split[1];
-
-					if (results.isEmpty()) {
-
-						results = checkPhrase(field, phrase);
-
-					} else {
-
-						results = mergeSets(results, checkPhrase(field, phrase));
-
-					}
-
-				}
-
-			}
-
-			return results;
-
-		} else {
-
-			String[] split = query.toLowerCase().split(":");
+		
+		String[] sub_queries = query.split(" AND ");
+		
+		for(String sub_query : sub_queries) {
+			
+			String[] split = sub_query.toLowerCase().split(":");
 			String field = split[0];
-			String term = split[1];
-
-			if (!query.contains("\"")) {
-
-				results = getIDSforTerm(field, term);
-				return results;
-			} else {
-
-				results = checkPhrase(field, term);
-				return results;
+			String term = split[1].replace("\"", "");
+			
+			if (!sub_query.contains("\"")) {
+				
+				if (results.isEmpty()) {
+					
+					results = checkTerm(field, term);
+					
+				}
+				else {
+					
+					results = mergeSets(results, checkTerm(field ,term));
+					
+				}
+				
 			}
-
+			else {
+				
+				if (results.isEmpty()) {
+					
+					results = checkPhrase(field, term);
+					
+				}
+				else {
+					
+					results = mergeSets(results, checkPhrase(field,term));
+					
+				}
+				
+			}
+			
 		}
+		
+		
+		return results;
 
 	}
 
 	//Gibt die IDS als HashSet aus, die die Termanfrage erfüllen
-	public HashSet<Integer> getIDSforTerm(String field, String term) {
+	public HashSet<Integer> checkTerm(String field, String term) {
 
+		term = term.toLowerCase();
+		
 		HashSet<Integer> resultIDS = new HashSet<Integer>();
 
 		if (field.equals("title")) {
@@ -235,9 +216,9 @@ public class PubMedSearchEngineImpl implements PubMedSearchEngine {
 
 								for (int pos2 : posArray2) {
 
-									if (Math.abs(pos1 - pos2) == 1) {
+									if (Math.abs(pos2 - pos1) == 1) {
 
-										results.add(pmid1);
+										results.add(pmid2);
 
 									}
 
@@ -282,9 +263,9 @@ public class PubMedSearchEngineImpl implements PubMedSearchEngine {
 
 								for (int pos2 : posArray2) {
 
-									if (Math.abs(pos1 - pos2) == 1) {
+									if (Math.abs(pos2 - pos1) == 1) {
 
-										results.add(pmid1);
+										results.add(pmid2);
 
 									}
 
@@ -329,9 +310,9 @@ public class PubMedSearchEngineImpl implements PubMedSearchEngine {
 
 								for (int pos2 : posArray2) {
 
-									if (Math.abs(pos1 - pos2) == 1) {
+									if (Math.abs(pos2 - pos1) == 1) {
 
-										results.add(pmid1);
+										results.add(pmid2);
 
 									}
 
@@ -359,8 +340,8 @@ public class PubMedSearchEngineImpl implements PubMedSearchEngine {
 	//Gibt die IDS als HashSet aus, die die Phrasenanfrage erfüllen
 	public HashSet<Integer> checkPhrase(String field, String phrase) {
 		
-		phrase = phrase.replace("\"", "");
-		String[] words = phrase.split("[\\s+.,:!?]");
+		phrase = phrase.replace("\"", "").toLowerCase();
+		String[] words = phrase.split("[\\s+.,:!?]+");
 		
 		HashSet<Integer> results = new HashSet<Integer>();
 		
@@ -370,7 +351,7 @@ public class PubMedSearchEngineImpl implements PubMedSearchEngine {
 		
 		if (words.length == 1) {
 			
-			results = getIDSforTerm(field, words[0]);
+			results = checkTerm(field, words[0]);
 			return results;
 		}
 		

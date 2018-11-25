@@ -2,6 +2,7 @@ package service;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.xml.parsers.SAXParser;
@@ -13,10 +14,10 @@ import org.xml.sax.helpers.DefaultHandler;
 public class index_parser {
 
 	// Key = Word, Jahr, Descriptor || Value = PMID,PMID,PMID, ....
-	public static HashMap<String, String> titleWL = new HashMap<String, String>();
-	public static HashMap<String, String> abstractWL = new HashMap<String, String>();
-	public static HashMap<String, String> yearL = new HashMap<String, String>();
-	public static HashMap<String, String> meshL = new HashMap<String, String>();
+	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> titleWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
+	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> abstractWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
+	public static HashMap<String, ArrayList<Integer>> yearL = new HashMap<String, ArrayList<Integer>>();
+	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> meshWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
 
 	public static Path pfad;
 
@@ -55,6 +56,11 @@ public class index_parser {
 			e.printStackTrace();
 		}
 
+		System.out.println(abstractWL.size());
+		System.out.println(titleWL.size());
+		System.out.println(yearL.size());
+		System.out.println(meshWL.size());
+
 		System.out.println("finished");
 
 	}
@@ -87,8 +93,6 @@ public class index_parser {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
-		System.out.println("finished");
 
 	}
 
@@ -129,7 +133,7 @@ public class index_parser {
 
 			boolean ArticleTitle = false;
 			boolean ArticleID = false;
-			String pmid = null;
+			int pmid = 0;
 			int index = 0;
 
 			@Override
@@ -156,7 +160,7 @@ public class index_parser {
 
 				if (ArticleID) {
 
-					pmid = new String(ch, start, length);
+					pmid = Integer.parseInt(new String(ch, start, length));
 					ArticleID = false;
 
 				}
@@ -164,7 +168,7 @@ public class index_parser {
 				if (ArticleTitle) {
 
 					String line = new String(ch, start, length).toLowerCase();
-					String[] tokens = line.split("[\\s+.,:?!]");
+					String[] tokens = line.split("[\\s+.,:?!]+");
 
 					for (String token : tokens) {
 
@@ -174,18 +178,28 @@ public class index_parser {
 
 							if (titleWL.containsKey(token)) {
 
-								String val = titleWL.get(token);
+								HashMap<Integer, ArrayList<Integer>> hm = titleWL.get(token);
 
-								if (!val.contains(pmid)) {
+								if (hm.containsKey(pmid)) {
 
-									val = val + "," + pmid + ":" + index;
-									titleWL.put(token, val);
+									hm.get(pmid).add(index);
+
+								} else {
+
+									ArrayList<Integer> pos = new ArrayList<Integer>();
+									pos.add(index);
+									hm.put(pmid, pos);
+
 								}
 
 							} else {
 
-								String val = pmid + ":" + index;
-								titleWL.put(token, val);
+								HashMap<Integer, ArrayList<Integer>> hm = new HashMap<Integer, ArrayList<Integer>>();
+								ArrayList<Integer> pos = new ArrayList<Integer>();
+								pos.add(index);
+								hm.put(pmid, pos);
+								titleWL.put(token, hm);
+
 							}
 						}
 
@@ -238,7 +252,7 @@ public class index_parser {
 
 			boolean ArticleAbs = false;
 			boolean ArticleID = false;
-			String pmid = null;
+			int pmid = 0;
 			int index = 0;
 
 			@Override
@@ -270,7 +284,7 @@ public class index_parser {
 
 				if (ArticleID) {
 
-					pmid = new String(ch, start, length);
+					pmid = Integer.parseInt(new String(ch, start, length));
 					ArticleID = false;
 
 				}
@@ -278,7 +292,7 @@ public class index_parser {
 				if (ArticleAbs) {
 
 					String line = new String(ch, start, length).toLowerCase();
-					String[] tokens = line.split("[\\s+.,:?!]");
+					String[] tokens = line.split("[\\s+.,:?!]+");
 
 					for (String token : tokens) {
 
@@ -288,19 +302,27 @@ public class index_parser {
 
 							if (abstractWL.containsKey(token)) {
 
-								String val = abstractWL.get(token);
+								HashMap<Integer, ArrayList<Integer>> hm = abstractWL.get(token);
 
-								if (!val.contains(pmid)) {
+								if (hm.containsKey(pmid)) {
 
-									val = val + "," + pmid + ":" + index;
-									abstractWL.put(token, val);
+									hm.get(pmid).add(index);
+
+								} else {
+
+									ArrayList<Integer> pos = new ArrayList<Integer>();
+									pos.add(index);
+									hm.put(pmid, pos);
 
 								}
 
 							} else {
 
-								String val = pmid + ":" + index;
-								abstractWL.put(token, val);
+								HashMap<Integer, ArrayList<Integer>> hm = new HashMap<Integer, ArrayList<Integer>>();
+								ArrayList<Integer> pos = new ArrayList<Integer>();
+								pos.add(index);
+								hm.put(pmid, pos);
+								abstractWL.put(token, hm);
 
 							}
 						}
@@ -350,8 +372,7 @@ public class index_parser {
 			boolean found = false;
 			boolean yearormedline = false;
 			boolean ArticleID = false;
-			String pmid = null;
-			int index = 0;
+			int pmid = 0;
 
 			@Override
 			public void startElement(String uri, String localName, String qName, Attributes attributes)
@@ -383,10 +404,10 @@ public class index_parser {
 			public void characters(char ch[], int start, int length) throws SAXException {
 
 				if (ArticleID) {
-					pmid = new String(ch, start, length);
+					pmid = Integer.parseInt(new String(ch, start, length));
 					ArticleID = false;
 				}
-				
+
 				if (found == true && yearormedline == true) {
 
 					String year = new String(ch, start, length);
@@ -399,13 +420,13 @@ public class index_parser {
 
 							if (yearL.containsKey(year)) {
 
-								String val = yearL.get(year);
-								val = val + "," + pmid ;
-								yearL.put(year, val);
-								
+								yearL.get(year).add(pmid);
+
 							} else {
-								String val = pmid;
-								yearL.put(year, val);
+
+								ArrayList<Integer> pmids = new ArrayList<Integer>();
+								pmids.add(pmid);
+								yearL.put(year, pmids);
 							}
 
 						} else {
@@ -415,32 +436,36 @@ public class index_parser {
 							for (String y : years) {
 
 								if (yearL.containsKey(y)) {
-									String val = yearL.get(y);
-									val = val + "," + pmid ;
-									yearL.put(y, val);
+
+									ArrayList<Integer> pmids = yearL.get(y);
+									pmids.add(pmid);
+
 								} else {
-									yearL.put(y, pmid);
+
+									ArrayList<Integer> pmids = new ArrayList<Integer>();
+									pmids.add(pmid);
+									yearL.put(y, pmids);
+
 								}
 
 							}
 
 						}
 
-					}
-					else {
-						
+					} else {
+
 						if (yearL.containsKey(year)) {
 
-							String val = yearL.get(year);
-							val = val + "," + pmid ;
-							yearL.put(year, val);
-							
+							yearL.get(year).add(pmid);
+
 						} else {
-							String val = pmid;
-							yearL.put(year, val);
+
+							ArrayList<Integer> pmids = new ArrayList<Integer>();
+							pmids.add(pmid);
+							yearL.put(year, pmids);
+
 						}
-						
-						
+
 					}
 
 				}
@@ -484,56 +509,86 @@ public class index_parser {
 
 		class UserHandler extends DefaultHandler {
 
-			boolean descriptorName = false;
+			boolean dName = false;
 			boolean ArticleID = false;
-			String pmid = null;
+			String descriptor;
+			int pmid = 0;
+			int index = 0;
 
 			@Override
 			public void startElement(String uri, String localName, String qName, Attributes attributes)
 					throws SAXException {
 
-				if (qName == "DescriptorName") {
-					descriptorName = true;
-				}
 				if (qName == "PMID") {
 					ArticleID = true;
 				}
+				
+				if (qName == "MeshHeading") {
+					dName = true;
+				}
+
 
 			}
 
 			@Override
 			public void endElement(String uri, String localName, String qName) throws SAXException {
 
+				if (qName == "DescriptorName") {
+	
+					dName = false;
+					index = 0;
 
+				}
+				
+				
 			}
 
 			@Override
 			public void characters(char ch[], int start, int length) throws SAXException {
 
 				if (ArticleID) {
-					pmid = new String(ch, start, length);
+					pmid = Integer.parseInt(new String(ch, start, length));
 					ArticleID = false;
 				}
-				
-				if (descriptorName) {
+
+				if (dName) {
+
+					descriptor = new String(ch, start, length).toLowerCase();
+					String[] tokens = descriptor.split("[\\s+.,:?!]+");
 					
-					String descriptor = new String(ch, start, length);
-					
-					if (meshL.containsKey(descriptor)) {
+					for (String token : tokens) {
 						
-						String val = meshL.get(descriptor);
-						val = val + "," + pmid;
-						meshL.put(descriptor, val);
-		
+						index += 1;
+						
+						if (meshWL.containsKey(token)) {
+						
+							HashMap<Integer, ArrayList<Integer>> hm = meshWL.get(token);
+
+							if (hm.containsKey(pmid)) {
+								
+								hm.get(pmid).add(index);
+								
+							}
+							else {
+								
+								ArrayList<Integer> pos = new ArrayList<Integer>();
+								pos.add(index);
+								hm.put(pmid, pos);
+								
+							}
+							
+
+						} else {
+
+							HashMap<Integer, ArrayList<Integer>> hm = new HashMap<Integer, ArrayList<Integer>>();
+							ArrayList<Integer> pos = new ArrayList<Integer>();
+							pos.add(index);
+							hm.put(pmid, pos);
+							meshWL.put(token, hm);
+
+						}
+						
 					}
-					else {
-						
-						meshL.put(descriptor, pmid);
-						
-					}
-					
-					
-					descriptorName = false;
 					
 				}
 

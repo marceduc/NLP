@@ -13,7 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class index_parser {
 
-	// Key = Word, Jahr, Descriptor || Key = PMID, Value = Position
+	// Key = Word, Jahr, Descriptor || Value = PMID,PMID,PMID, ....
 	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> titleWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
 	public static HashMap<String, HashMap<Integer, ArrayList<Integer>>> abstractWL = new HashMap<String, HashMap<Integer, ArrayList<Integer>>>();
 	public static HashMap<String, ArrayList<Integer>> yearL = new HashMap<String, ArrayList<Integer>>();

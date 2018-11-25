@@ -19,8 +19,7 @@ public class read_queries {
 
       try {
           // FileReader reads text files in the default encoding.
-          FileReader fileReader =
-              new FileReader(fileName);
+          FileReader fileReader =  new FileReader(fileName);
 
           // Always wrap FileReader in BufferedReader.
           BufferedReader bufferedReader =
@@ -64,9 +63,11 @@ public class read_queries {
 
 			 //for testing remove when merging with Jermeies code
 			 // Key = Word, Jahr, Descriptor || Value = PMID,PMID,PMID, ....
-			 public static HashMap<String, String> titleWL = new HashMap<String, String>();
-			 public static HashMap<String, String> abstractWL = new HashMap<String, String>();
-			 titleWL.put('men', '1,2,3,4,5');
+			 	public static HashMap<String, String> titleWL = new HashMap<String, String>();
+			 	public static HashMap<String, String> abstractWL = new HashMap<String, String>();
+			 	public static HashMap<String, String> yearL = new HashMap<String, String>();
+			 	public static HashMap<String, String> meshL = new HashMap<String, String>();
+			 titleWL.put('all', '1,2,3,4,5,6,7,8,9,10,11,12');
 			 titleWL.put('therapy', '1,2,3,4,5');
 			 titleWL.put('cancer', '1,2,3,4,5');
 

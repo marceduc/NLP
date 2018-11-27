@@ -97,6 +97,35 @@ public class HMM {
 		
 		}
 		
+		//Count unseen words
+		HashMap<String, Double> unseenWords = new HashMap<String, Double>();
+		double lambda = 0.5;
+
+		for(String word : word_counts.keySet()) {
+		  for(String tag : emission_mat.keySet()) {
+		    if(emission_mat.get(tag).containsKey(word)) {
+		      //add lambda to tag-word count 
+		      HashMap<String, Double> tag_emission_prob  = emission_mat.get(tag);
+		      double val = emission_mat.get(tag).get(word) + lambda;
+		      tag_emission_prob.put(word, val);
+		      emission_mat.put(tag, tag_emission_prob);	
+		    } else {
+		      //add word to tag_emmission_prob, add unseen count
+		      HashMap<String, Double> tag_emission_prob  = emission_mat.get(tag);
+		      //add unseen word probability
+		      tag_emission_prob.put(word, lambda);
+		      //update tag emission matrix
+		      emission_mat.put(tag, tag_emission_prob);
+		      //add count for unseen words
+		      if(unseenWords.containsKey(word)) {
+		        double val = unseenWords.get(word) + (double) 1.0;
+		        unseenWords.put(word, val);
+		      }
+		    }
+		  }
+		}
+		
+		
 		//normalize emission matrix
 		for(String word : word_counts.keySet()) {
 			for(String tag : emission_mat.keySet()) {
@@ -104,7 +133,7 @@ public class HMM {
 					//get tag emission matrix
 					HashMap<String, Double> tag_emission_prob  = emission_mat.get(tag);
 					//get value of word
-					double val = emission_mat.get(tag).get(word) / word_counts.get(word);
+					double val = emission_mat.get(tag).get(word) / (word_counts.get(word) + lambda * unseenWords.get(word)) ;
 					//update value
 					tag_emission_prob.put(word, val);
 					//update tag emission matrix

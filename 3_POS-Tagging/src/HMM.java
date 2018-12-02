@@ -1,5 +1,17 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class HMM {
 	
@@ -11,6 +23,10 @@ public class HMM {
 	public HashMap<String, HashMap<String,Double>> transition_mat;
 	public HashMap<String, Double> tag_transition_prob;
 	public HashMap<String, Double> follower_counts;
+	
+	public Set<String> known_words; 
+	
+	public HashMap<String, HashMap<String,Double>> LLH_mat;
 
 	
 	public HMM(String name){
@@ -23,13 +39,14 @@ public class HMM {
 		this.transition_mat = new HashMap<String, HashMap<String,Double>>();
 		this.tag_transition_prob = new HashMap<String, Double>();
 		this.follower_counts = new HashMap<String, Double>();
+		this.LLH_mat = new HashMap<String, HashMap<String,Double>>();
+		this.known_words = new HashSet<String>();
 		
 		
 	}
 	
-	public void train(List<String> sentences ){
-		
-		//get start_probs and emmision matrix
+	
+	public void get_start_prob(List<String> sentences) {
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
 			
@@ -50,8 +67,20 @@ public class HMM {
 				//System.out.println(key + start_prob.get(key) );
 				
 			}
+		}
+		
+	}
+	
+	public void get_emission(List<String> sentences) {
+		
+		int i = 1;
+		//count emissions
+		for(String sentence : sentences) {
+			//System.out.println("Sentence " + i + "/" + sentences.size());
+			i = i + 1;
 			
-			// train emission matrix
+			String[] pairs = sentence.split("\\s++");
+			
 			for(String pair:pairs) {
 				
 				String word = pair.split("/")[0];
@@ -96,19 +125,32 @@ public class HMM {
 			}
 		
 		}
+		known_words = word_counts.keySet();
 		
-		//Count unseen words
+		for(String tag: emission_mat.keySet()) {
+			if(start_prob.get(tag) == null) {
+				start_prob.put(tag, (double) 0);
+			}
+		}
+		
+		
+		//Count unseen words for smoothing
 		HashMap<String, Double> unseenWords = new HashMap<String, Double>();
 		double lambda = 0.5;
 
 		for(String word : word_counts.keySet()) {
 		  for(String tag : emission_mat.keySet()) {
 		    if(emission_mat.get(tag).containsKey(word)) {
+		    	
 		      //add lambda to tag-word count 
 		      HashMap<String, Double> tag_emission_prob  = emission_mat.get(tag);
+		      
 		      double val = emission_mat.get(tag).get(word) + lambda;
+		      
 		      tag_emission_prob.put(word, val);
+		      
 		      emission_mat.put(tag, tag_emission_prob);	
+		      
 		    } else {
 		      //add word to tag_emmission_prob, add unseen count
 		      HashMap<String, Double> tag_emission_prob  = emission_mat.get(tag);
@@ -120,11 +162,14 @@ public class HMM {
 		      if(unseenWords.containsKey(word)) {
 		        double val = unseenWords.get(word) + (double) 1.0;
 		        unseenWords.put(word, val);
+		      } else {
+		    	  unseenWords.put(word, (double) 1);
 		      }
 		    }
 		  }
 		}
 		
+		double unseen_count; 
 		
 		//normalize emission matrix
 		for(String word : word_counts.keySet()) {
@@ -132,8 +177,14 @@ public class HMM {
 				if(emission_mat.get(tag).get(word) != null) {
 					//get tag emission matrix
 					HashMap<String, Double> tag_emission_prob  = emission_mat.get(tag);
+					if(unseenWords.get(word)== null){
+						unseen_count = 0;
+					} else {
+						unseen_count = unseenWords.get(word);
+					}
+					
 					//get value of word
-					double val = emission_mat.get(tag).get(word) / (word_counts.get(word) + lambda * unseenWords.get(word)) ;
+					double val = emission_mat.get(tag).get(word) / (word_counts.get(word) + lambda * unseen_count) ;
 					//update value
 					tag_emission_prob.put(word, val);
 					//update tag emission matrix
@@ -141,12 +192,17 @@ public class HMM {
 				}
 			}
 		}
-		
+			
+	}
+	
+	
+	
+	
+	public void get_transition(List<String> sentences ){		
 		
 		//get transition matrix
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
-			//List<String> pairs = Arrays.asList(sentence.split(" "));
 			
 			//get start probabilities
 			String preceder = pairs[0].split("/")[1];
@@ -187,14 +243,49 @@ public class HMM {
 			
 		}
 		
+		
+		//count unseen transitions
+		HashMap<String, Double> unseen_transitions = new HashMap<String, Double>();
+		double lambda = 0.5;
+		double unseen_count = 0;
+		
+		for(String preceder : transition_mat.keySet()) {
+			for(String follower : transition_mat.keySet()) {
+				tag_transition_prob = transition_mat.get(preceder);
+				if(tag_transition_prob.containsKey(follower)) {
+					double val = tag_transition_prob.get(follower) + lambda;
+					tag_transition_prob.put(follower, val);
+					transition_mat.put(preceder, tag_transition_prob);
+				} else {
+					tag_transition_prob.put(follower, lambda);
+					transition_mat.put(preceder, tag_transition_prob);
+					
+					if(unseen_transitions.containsKey(follower)) {
+					unseen_count  = unseen_transitions.get(follower) + (double) 1.0;
+					unseen_transitions.put(follower, unseen_count);
+					} else {
+						unseen_transitions.put(follower, (double) 1.0);
+					}					
+					
+				}				
+			}
+		}
+		
 		//normalize transmisson matrix
 		for(String follower : follower_counts.keySet()) {
 			for(String preceder : transition_mat.keySet()) {
 				if(transition_mat.get(preceder).get(follower) != null) {
 					//get preceder transition matrix
 					tag_transition_prob  = transition_mat.get(preceder);
+					if(unseen_transitions.get(follower)== null){
+						unseen_count = 0;
+					} else {
+						unseen_count = unseen_transitions.get(follower);
+					}
+					
+					
 					//get value of word
-					double val = tag_transition_prob.get(follower) / follower_counts.get(follower);
+					double val = tag_transition_prob.get(follower) / (follower_counts.get(follower) + lambda * unseen_count) ;
 					//update value
 					tag_transition_prob.put(follower, val);
 					//update tag transition matrix
@@ -205,8 +296,78 @@ public class HMM {
 		
 	}
 
+	public void save_matrix(HashMap<String, HashMap<String,Double>>  matrix, String filename) {
+		try (ObjectOutput objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename, false)))) {
+		    objectOutputStream.writeObject(matrix);
+		} catch (Throwable cause) {
+		    cause.printStackTrace();
+		}
+		System.out.println(filename + " has been saved.");
+	}
+	public void save_start_prob(HashMap<String,Double>  matrix, String filename) {
+		try (ObjectOutput objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename, false)))) {
+		    objectOutputStream.writeObject(matrix);
+		} catch (Throwable cause) {
+		    cause.printStackTrace();
+		}
+		System.out.println(filename + " has been saved.");
+	}
 	
+	public HashMap<String, HashMap<String,Double>> load_matrix(String filename){
+		System.out.println("loading " + filename);
+		HashMap<String, HashMap<String, Double>> outerMap;
+		try (ObjectInput objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
+		    outerMap = (HashMap<String, HashMap<String, Double>>) objectInputStream.readObject();
+		} catch (Throwable cause) {
+		    cause.printStackTrace();
+		    outerMap =  new HashMap<String, HashMap<String, Double>>();
+		}
+		return(outerMap);
+
+	}
+	public HashMap<String,Double> load_start_prob(String filename){
+		System.out.println("loading " + filename);
+		HashMap<String, Double> outerMap;
+		try (ObjectInput objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
+		    outerMap = (HashMap<String, Double>) objectInputStream.readObject();
+		} catch (Throwable cause) {
+		    cause.printStackTrace();
+		    outerMap =  new HashMap<String, Double>();
+		}
+		return(outerMap);
+
+	}
 	
+	public void annotate(List<String> sentences) {
+		
+		HashMap<String, Double> word_state_prob = new HashMap<String, Double>();
+		
+		
+		for(String sentence : sentences) {
+			String[] pairs = sentence.split("\\s++");
+			List<String> words = new ArrayList<>();
+			
+			for(String pair:pairs) {
+				words.add(pair.split("/")[0]);				
+			}
+			System.out.println(words);
+			System.out.println("______");
+			
+			//initialize frist word
+			String first_word = words.get(0);
+			for(String state : emission_mat.keySet()){
+				double start_p = start_prob.get(state);
+				double em_prob = emission_mat.get(state).get(words);
+				start_p = Math.log(start_p) + Math.log(em_prob);
+				word_state_prob.put(state, start_p);
+				LLH_mat.put(first_word, word_state_prob);				
+			}
+			
+			
+		
+	}
+}
+
 
 	
 	

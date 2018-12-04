@@ -274,15 +274,29 @@ public class HMM {
 		//double lambda = 0.5;
 		double unseen_count = 0;
 		
-		for(String preceder : transition_mat.keySet()) {
-			for(String follower : transition_mat.keySet()) {
-				tag_transition_prob = transition_mat.get(preceder);
-				if(tag_transition_prob.containsKey(follower)) {
-					double val = tag_transition_prob.get(follower) + lambda;
-					tag_transition_prob.put(follower, val);
-					transition_mat.put(preceder, tag_transition_prob);
+		for(String preceder : known_tags) {
+			for(String follower : known_tags) {
+				if(transition_mat.containsKey(preceder)) {
+					tag_transition_prob = transition_mat.get(preceder);
+					if(tag_transition_prob.containsKey(follower)) {
+						double val = tag_transition_prob.get(follower) + lambda;
+						tag_transition_prob.put(follower, val);
+						transition_mat.put(preceder, tag_transition_prob);
+					} else {
+						tag_transition_prob.put(follower, lambda);
+						transition_mat.put(preceder, tag_transition_prob);
+						
+						if(unseen_transitions.containsKey(follower)) {
+						unseen_count  = unseen_transitions.get(follower) + (double) 1.0;
+						unseen_transitions.put(follower, unseen_count);
+						} else {
+							unseen_transitions.put(follower, (double) 1.0);
+						}					
+						
+					}	
+					//case preceder not yet in transition_mat add new hashmap
 				} else {
-					tag_transition_prob.put(follower, lambda);
+					tag_transition_prob.clear();
 					transition_mat.put(preceder, tag_transition_prob);
 					
 					if(unseen_transitions.containsKey(follower)) {
@@ -290,9 +304,9 @@ public class HMM {
 					unseen_transitions.put(follower, unseen_count);
 					} else {
 						unseen_transitions.put(follower, (double) 1.0);
-					}					
-					
-				}				
+					}
+				}
+			
 			}
 		}
 		

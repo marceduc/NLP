@@ -47,7 +47,6 @@ public class ApplyModel {
 		System.out.println(myHmm.emission_mat.keySet());
 		
 		System.out.println(myHmm.transition_mat.keySet());
-		System.exit(0);
 		
 
 		

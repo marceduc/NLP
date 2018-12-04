@@ -25,9 +25,9 @@ public class HMM {
 	public HashMap<String, Double> follower_counts;
 	
 	public Set<String> known_words; 
+	public Set<String> known_tags; 
 	
-	public HashMap<String, HashMap<String,Double>> LLH_mat;
-
+	double lambda = 0.5; //smoothening constant
 	
 	public HMM(String name){
 		
@@ -39,30 +39,46 @@ public class HMM {
 		this.transition_mat = new HashMap<String, HashMap<String,Double>>();
 		this.tag_transition_prob = new HashMap<String, Double>();
 		this.follower_counts = new HashMap<String, Double>();
-		this.LLH_mat = new HashMap<String, HashMap<String,Double>>();
+		//this.LLH_mat = new HashMap<Integer, HashMap<String,Double>>();
 		this.known_words = new HashSet<String>();
-		
+		this.known_tags = new HashSet<String>();
 		
 	}
 	
 	
 	public void get_start_prob(List<String> sentences) {
+		
+		double val;
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
 			
-			//get start probabilities
-			String start_tag = pairs[0].split("/")[1];		
+			int idx = pairs[0].lastIndexOf("/");
+			String start_tag = pairs[0].substring(idx + 1);
+
 			
 			if(start_prob.containsKey(start_tag)) {				
-				double val = start_prob.get(start_tag)+ (double) 1.0;
+				val = start_prob.get(start_tag)+ (double) 1.0;
 				start_prob.put(start_tag, val);				
 			}else {				
 				start_prob.put(start_tag, (double) 1);				
 			}
 			
+			//smoothing start_prob
+			double unseen_counter = 0 ;
+			
+			for(String tag : known_tags) {
+				if(start_prob.containsKey(tag)) {				
+					val = start_prob.get(tag)+ lambda;
+					start_prob.put(tag, val);				
+				}else {				
+					start_prob.put(tag, lambda);
+					unseen_counter ++;
+				}
+			}
+			
 			//calculate probability by dividing through sentence sum
 			for(String key:start_prob.keySet() ) {
-				double val = start_prob.get(key) / (double) sentences.size();
+				val = start_prob.get(key) / ((double) sentences.size() + lambda * unseen_counter);
 				start_prob.put(key, val);
 				//System.out.println(key + start_prob.get(key) );
 				
@@ -82,9 +98,13 @@ public class HMM {
 			String[] pairs = sentence.split("\\s++");
 			
 			for(String pair:pairs) {
+
 				
-				String word = pair.split("/")[0];
-				String tag = pair.split("/")[1];
+				int idx = pair.lastIndexOf("/");
+				
+				String word = pair.substring(0,idx);
+				String tag = pair.substring(idx + 1);
+				
 				
 				//count all word occurences for normalization
 				if(word_counts.containsKey(word)) {
@@ -126,8 +146,9 @@ public class HMM {
 		
 		}
 		known_words = word_counts.keySet();
+		known_tags = emission_mat.keySet();
 		
-		for(String tag: emission_mat.keySet()) {
+		for(String tag: known_tags) {
 			if(start_prob.get(tag) == null) {
 				start_prob.put(tag, (double) 0);
 			}
@@ -136,7 +157,7 @@ public class HMM {
 		
 		//Count unseen words for smoothing
 		HashMap<String, Double> unseenWords = new HashMap<String, Double>();
-		double lambda = 0.5;
+		//double lambda = 0.5;
 
 		for(String word : word_counts.keySet()) {
 		  for(String tag : emission_mat.keySet()) {
@@ -204,11 +225,15 @@ public class HMM {
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
 			
-			//get start probabilities
-			String preceder = pairs[0].split("/")[1];
+			
+			//String preceder = pairs[0].split("/")[1];
+			int idx = pairs[0].lastIndexOf("/");
+			String preceder = pairs[0].substring(idx + 1);
+			
 			
 			for(int i=1;i <pairs.length; i++) {
-				String follower = pairs[i].split("/")[1];
+				idx = pairs[0].lastIndexOf("/");
+				String follower = pairs[0].substring(idx + 1);
 				
 				//update counts
 				if(follower_counts.containsKey(follower)) {
@@ -246,7 +271,7 @@ public class HMM {
 		
 		//count unseen transitions
 		HashMap<String, Double> unseen_transitions = new HashMap<String, Double>();
-		double lambda = 0.5;
+		//double lambda = 0.5;
 		double unseen_count = 0;
 		
 		for(String preceder : transition_mat.keySet()) {
@@ -338,34 +363,146 @@ public class HMM {
 
 	}
 	
+
+	
 	public void annotate(List<String> sentences) {
 		
-		HashMap<String, Double> word_state_prob = new HashMap<String, Double>();
+		//keeps track of the likelihood of the sequence at each Position for each state
+		HashMap<Integer, HashMap<String,Double>> LLH_mat = new HashMap<Integer, HashMap<String,Double>>();
+		//keeps track of the mml preceder for eacht position and each state
+		HashMap<Integer, HashMap<String,String>> state_seq_mat = new HashMap<Integer, HashMap<String,String>>();
 		
+		HashMap<String, Double> pos_state_prob = new HashMap<String, Double>();
+		HashMap<String, Double> former_pos_prob = new HashMap<String, Double>();
+		
+		HashMap<String, String> state_preceder = new HashMap<String, String>();
 		
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
 			List<String> words = new ArrayList<>();
+			List<String> True_states = new ArrayList<>();
+			List<String> reversed_states = new ArrayList<>();
+			
+			List<String> maxLL_states = new ArrayList<>();
 			
 			for(String pair:pairs) {
-				words.add(pair.split("/")[0]);				
+				words.add(pair.split("/")[0]);
+				True_states.add(pair.split("/")[1]);
 			}
+			
+			System.out.println("Words:");
 			System.out.println(words);
+			System.out.println("True States:");
+			System.out.println(True_states);
+			
+			
+			
 			System.out.println("______");
+			System.out.println(known_words.contains("defendants"));
+			//System.out.println(known_words);
+			
+			double em_prob;
+			double trans_prob;
+			double maxLL = 0;
+			String maxLL_state;
+			
 			
 			//initialize frist word
 			String first_word = words.get(0);
+			int pos_zero = 0;
+			
 			for(String state : emission_mat.keySet()){
+				//System.out.println("State: " + state);
 				double start_p = start_prob.get(state);
-				double em_prob = emission_mat.get(state).get(words);
-				start_p = Math.log(start_p) + Math.log(em_prob);
-				word_state_prob.put(state, start_p);
-				LLH_mat.put(first_word, word_state_prob);				
+				System.out.println("start_p:" + start_p);
+				start_p = Math.log(start_p);
+				
+				if(known_words.contains(first_word)) {
+					em_prob = emission_mat.get(state).get(first_word);
+				} else { //default prob for unknown words
+					em_prob = (double) 1 / (double) emission_mat.size();
+				}
+				em_prob = Math.log(em_prob);
+				
+				System.out.println("start_p:" + start_p + " em_p: " + em_prob );
+				
+				start_p = start_p + em_prob;				
+				pos_state_prob.put(state, start_p);
+				LLH_mat.put(pos_zero, pos_state_prob);
 			}
+			former_pos_prob = pos_state_prob;
+			
+			System.out.println(former_pos_prob);
 			
 			
-		
+			for(int pos =1; pos < words.size(); pos++) {
+				//add column for every position in sentence
+				former_pos_prob = LLH_mat.get(pos-1);
+				pos_state_prob.clear();
+				double prev_p;
+				double p; 
+				
+				for(String state : emission_mat.keySet()){
+					// get em prob of given state for word at pos
+					if(known_words.contains(words.get(pos))) {
+						em_prob = emission_mat.get(state).get(words.get(pos));
+					} else { //default prob for unknown words
+						em_prob = (double) 1 / (double) emission_mat.size();
+					}
+					em_prob = Math.log(em_prob);
+					
+					maxLL_state = "Overwrite";
+					maxLL = Double.NEGATIVE_INFINITY ;
+					System.out.println("Initial"+  maxLL);
+					System.out.println("Position"+  pos);
+					System.out.println(former_pos_prob.keySet());
+					for(String prev_state : former_pos_prob.keySet()) {
+						
+						prev_p = former_pos_prob.get(prev_state);
+						//System.out.println("Prev log prob: "+ prev_p);
+
+
+						trans_prob = transition_mat.get(prev_state).get(state);
+						trans_prob = Math.log(trans_prob);
+						//System.out.println("Trans log prob: "+ trans_prob);
+						p = prev_p + trans_prob + em_prob;
+						System.out.println("probs: "+ prev_p + "/" + trans_prob +  "/" + em_prob + "/" +  p);
+						System.exit(0);
+						if(p >= maxLL) {
+							maxLL = p;
+							maxLL_state = prev_state;
+						}
+
+					}
+					pos_state_prob.put(state, maxLL);
+					state_preceder.put(state, maxLL_state);
+				}
+				LLH_mat.put(pos, pos_state_prob);
+				state_seq_mat.put(pos, state_preceder);
+
+			}
+			for(int pos =words.size()-1; pos > 0; pos--) {
+				System.out.println(pos + "/" + words.size());
+				System.out.println(state_seq_mat.get(pos));
+				String mLLstate = "";				
+				double old_p = Double.NEGATIVE_INFINITY;
+
+				for(String state:LLH_mat.get(pos).keySet()) {
+					double p = LLH_mat.get(pos).get(state);
+					if(p >= old_p) {
+						old_p = p;
+						mLLstate = state;
+					}
+				}
+				
+				reversed_states.add(mLLstate);
+				
+			}
+			System.out.println("reversed states: ");
+			System.out.println(reversed_states);
+		}
 	}
+		
 }
 
 
@@ -374,4 +511,4 @@ public class HMM {
 	
 
 
-}
+

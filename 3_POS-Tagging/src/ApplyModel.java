@@ -1,10 +1,12 @@
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
@@ -31,18 +33,65 @@ public class ApplyModel {
 		
 		List<String> sentences = sentences_from_path(train_folder);
 		
-		HMM myHmm = new HMM("awesome");
+		HMM myHmm = new HMM("myHmm");
 		System.out.println(myHmm.name);
+			
 		
+
 		
-		myHmm.get_start_prob(sentences);
-		System.out.println(myHmm.start_prob);
 		myHmm.get_emission(sentences);
+		myHmm.get_start_prob(sentences);
+		myHmm.get_transition(sentences);
+		
+		System.out.println(myHmm.start_prob.keySet());
+		System.out.println(myHmm.emission_mat.keySet());
+		
+		System.out.println(myHmm.transition_mat.keySet());
+		System.exit(0);
+		
+
+		
+		System.out.println("Trainging finished");
+		/*
+		System.out.println(myHmm.start_prob);
 		System.out.println(myHmm.emission_mat.keySet());
 		System.out.println(myHmm.emission_mat.get("vb"));
 		System.out.println("-----");
-		myHmm.get_transition(sentences);
 		System.out.println(myHmm.transition_mat.get("vb"));
+		/*
+		//save model
+	      try {
+	          FileOutputStream fileOut =
+	          new FileOutputStream("bla.txt");
+	          ObjectOutputStream out = new ObjectOutputStream(fileOut);
+	          out.writeObject(myHmm);
+	          out.close();
+	          fileOut.close();
+	          System.out.printf(myHmm.name + "is saved in myHmm.txt");
+	       } catch (IOException i) {
+	          i.printStackTrace();
+	       }
+		
+			/*load model
+	      myHmm = null;
+	      try {
+	          FileInputStream fileIn = new FileInputStream("myHmm.txt");
+	          ObjectInputStream in = new ObjectInputStream(fileIn);
+	          myHmm = (HMM) in.readObject();
+	          in.close();
+	          fileIn.close();
+	       } catch (IOException i) {
+	          i.printStackTrace();
+	          return;
+	       } catch (ClassNotFoundException c) {
+	          System.out.println("Employee class not found");
+	          c.printStackTrace();
+	          return;
+	       }
+		*/
+		
+		
+		/*
 		myHmm.save_matrix(myHmm.emission_mat, "emission.txt");
 		myHmm.save_matrix(myHmm.transition_mat, "transition_mat.txt");
 		myHmm.save_start_prob(myHmm.start_prob, "start_probabilities.txt");
@@ -57,46 +106,14 @@ public class ApplyModel {
 		myHmm.transition_mat = myHmm.load_matrix("transition_mat.txt");
 		myHmm.start_prob = myHmm.load_start_prob("start_probabilities.txt");
 		System.out.println(myHmm.emission_mat.get("vb"));
-		
+		*/
 	
 		sentences = sentences_from_path(input_folder);
+		List<String> subset = new ArrayList<>();
+		subset.add(sentences.get(0));
 		
-		
-		HashMap<String, Double> word_state_prob = new HashMap<String, Double>();
-		
-		
-		for(String sentence : sentences) {
-			String[] pairs = sentence.split("\\s++");
-			List<String> words = new ArrayList<>();
-			
-			for(String pair:pairs) {
-				words.add(pair.split("/")[0]);				
-			}
-			System.out.println(words);
-			
-			System.out.println("______");
-			System.out.println(myHmm.known_words.contains("defendants"));
-			System.out.println(myHmm.known_words);
-			
-			double em_prob;
-			
-			//initialize frist word
-			String first_word = words.get(0);
-			for(String state : myHmm.emission_mat.keySet()){
-				double start_p = myHmm.start_prob.get(state);
-				if(myHmm.known_words.contains(first_word)) {
-					em_prob = myHmm.emission_mat.get(state).get(first_word);
-				} else { //dealing with unknown words
-					em_prob = (double) 1 / (double) myHmm.emission_mat.size();
-				}
-				start_p = Math.log(start_p) + Math.log(em_prob);
-				word_state_prob.put(state, start_p);
-				myHmm.LLH_mat.put(first_word, word_state_prob);				
-			}
-			
-			
-		
-	}
+		myHmm.annotate(subset);
+
 		
 		
 	}

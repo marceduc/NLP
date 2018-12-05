@@ -428,7 +428,7 @@ public class HMM {
 			for(String state : emission_mat.keySet()){
 				//System.out.println("State: " + state);
 				double start_p = start_prob.get(state);
-				System.out.println("start_p:" + start_p);
+				//System.out.println("start_p:" + start_p);
 				start_p = Math.log(start_p);
 				
 				if(known_words.contains(first_word)) {
@@ -438,7 +438,7 @@ public class HMM {
 				}
 				em_prob = Math.log(em_prob);
 				
-				System.out.println("start_p:" + start_p + " em_p: " + em_prob );
+				//System.out.println("start_p:" + start_p + " em_p: " + em_prob );
 				
 				start_p = start_p + em_prob;				
 				pos_state_prob.put(state, start_p);
@@ -447,15 +447,18 @@ public class HMM {
 			former_pos_prob = pos_state_prob;
 			
 			System.out.println(former_pos_prob);
-			
-			
-			for(int pos =1; pos < words.size(); pos++) {
+			System.out.println(LLH_mat.get(1-1)); //both correct
+			//fill up table by word position
+			for(int pos =1; pos < 2; pos++) {
 				//add column for every position in sentence
 				former_pos_prob = LLH_mat.get(pos-1);
-				pos_state_prob.clear();
+				System.out.println(LLH_mat.get(pos-1).keySet()); //correct
+				//pos_state_prob.clear(); 
 				double prev_p;
 				double p; 
+
 				
+				//get total prob for every tag at pos
 				for(String state : emission_mat.keySet()){
 					// get em prob of given state for word at pos
 					if(known_words.contains(words.get(pos))) {
@@ -464,30 +467,35 @@ public class HMM {
 						em_prob = (double) 1 / (double) emission_mat.size();
 					}
 					em_prob = Math.log(em_prob);
-					
 					maxLL_state = "Overwrite";
 					maxLL = Double.NEGATIVE_INFINITY ;
-					System.out.println("Initial"+  maxLL);
-					System.out.println("Position"+  pos);
-					System.out.println(former_pos_prob.keySet());
+
+					former_pos_prob = LLH_mat.get(pos-1);
+					System.out.println(LLH_mat.get(pos-1).keySet()); //empty// clears this
+					//get mLL from all preceders
 					for(String prev_state : former_pos_prob.keySet()) {
 						
 						prev_p = former_pos_prob.get(prev_state);
 						//System.out.println("Prev log prob: "+ prev_p);
 
-
+						System.out.println("Prevstate: "+prev_state + " State: " + state );
 						trans_prob = transition_mat.get(prev_state).get(state);
 						trans_prob = Math.log(trans_prob);
 						//System.out.println("Trans log prob: "+ trans_prob);
 						p = prev_p + trans_prob + em_prob;
-						System.out.println("probs: "+ prev_p + "/" + trans_prob +  "/" + em_prob + "/" +  p);
-						System.exit(0);
+						//System.out.println("probs: "+ prev_p + "/" + trans_prob +  "/" + em_prob + "/" +  p);
+						if(pos == 2) {
+							System.exit(0);
+						}
+						
+						
 						if(p >= maxLL) {
 							maxLL = p;
 							maxLL_state = prev_state;
 						}
 
 					}
+
 					pos_state_prob.put(state, maxLL);
 					state_preceder.put(state, maxLL_state);
 				}

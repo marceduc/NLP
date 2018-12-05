@@ -33,6 +33,37 @@ public class ApplyModel {
 		
 		List<String> sentences = sentences_from_path(train_folder);
 		
+		
+		Model myMod = new Model("HMM");
+		System.out.println(myMod.name);
+		myMod.get_knowns(sentences);
+		System.out.println(myMod.known_tags);
+		myMod.get_start_p(sentences);
+		System.out.println(myMod.start_p.keySet());
+		System.out.println(myMod.start_p);
+		
+		myMod.get_emission(sentences);
+		System.out.println(myMod.em_mat.keySet());
+		System.exit(0);
+		System.out.println(myMod.em_mat.get("vbn"));
+		
+		myMod.get_transition(sentences);
+		System.out.println(myMod.tr_mat.keySet());
+		System.out.println(myMod.tr_mat.get("vbn"));
+		
+		System.out.println("Trainging finished");
+		
+		
+		sentences = sentences_from_path(input_folder);
+		List<String> subset = new ArrayList<>();
+		subset.add(sentences.get(0));
+		
+		myMod.annotate(subset);
+
+		
+		
+		System.exit(0);
+		
 		HMM myHmm = new HMM("myHmm");
 		System.out.println(myHmm.name);
 			
@@ -45,12 +76,17 @@ public class ApplyModel {
 		
 		System.out.println(myHmm.start_prob.keySet());
 		System.out.println(myHmm.emission_mat.keySet());
-		
+
 		System.out.println(myHmm.transition_mat.keySet());
+		
+		for(String key :myHmm.transition_mat.keySet() ) {
+			System.out.println(myHmm.transition_mat.get(key));
+		}
 		
 
 		
 		System.out.println("Trainging finished");
+		//System.exit(0);
 		/*
 		System.out.println(myHmm.start_prob);
 		System.out.println(myHmm.emission_mat.keySet());
@@ -108,7 +144,7 @@ public class ApplyModel {
 		*/
 	
 		sentences = sentences_from_path(input_folder);
-		List<String> subset = new ArrayList<>();
+		subset = new ArrayList<>();
 		subset.add(sentences.get(0));
 		
 		myHmm.annotate(subset);

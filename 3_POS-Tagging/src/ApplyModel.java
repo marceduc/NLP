@@ -31,32 +31,80 @@ public class ApplyModel {
 		String input_folder = "./input/";
 		String output_folder = "./output/";
 		
-		List<String> sentences = sentences_from_path(train_folder);
 		
+		List<String> sentences = sentences_from_path(train_folder);
+
 		
 		Model myMod = new Model("HMM");
 		System.out.println(myMod.name);
+		
+		
 		myMod.get_knowns(sentences);
-		System.out.println(myMod.known_tags);
-		myMod.get_start_p(sentences);
+		
+		
+		
+		//System.out.println(myMod.known_tags);
+		
+		myMod.get_start_p(sentences);		
+		myMod.get_emission(sentences);
+		myMod.get_transition(sentences);
+		
+
+		/*
+		System.out.println(myMod.em_mat.get("nn"));
+		System.out.println(myMod.em_mat.get("jj"));
+		
+		System.out.println(myMod.em_mat.get("nil").get("Reserve"));
+		System.out.println("_________");
+		System.out.println(myMod.em_mat.get("nn").get("Reserve"));
+		
+		
+		
+		for(String preceder : myMod.tr_mat.keySet()){
+			System.out.println(preceder);
+			System.out.println("nil prob " +  myMod.tr_mat.get(preceder).get("nil"));
+			System.out.println("jj prob " +  myMod.tr_mat.get(preceder).get("jj"));
+			System.out.println(myMod.tr_mat.get(preceder).keySet().size());
+			
+		}
+		
+
+	
+		System.out.println(myMod.tr_mat.get("bed").keySet());
+		
+		
+		/*
 		System.out.println(myMod.start_p.keySet());
 		System.out.println(myMod.start_p);
 		
-		myMod.get_emission(sentences);
-		System.out.println(myMod.em_mat.keySet());
-		System.exit(0);
+		
+		
+		
+		//System.out.println(myMod.em_mat.keySet());
+		//System.out.println(myMod.em_mat.get("nil"));
+		System.out.println(myMod.tr_mat.get("nil"));
+		
+		
+		//System.exit(0);
 		System.out.println(myMod.em_mat.get("vbn"));
 		
-		myMod.get_transition(sentences);
+		
 		System.out.println(myMod.tr_mat.keySet());
 		System.out.println(myMod.tr_mat.get("vbn"));
 		
 		System.out.println("Trainging finished");
 		
+		*/
+		
+		
+		
 		
 		sentences = sentences_from_path(input_folder);
 		List<String> subset = new ArrayList<>();
 		subset.add(sentences.get(0));
+		
+		
+		
 		
 		myMod.annotate(subset);
 
@@ -177,7 +225,6 @@ public class ApplyModel {
 			}
 			
 		    try {
-		    	
 		    	String content = readFile(PATH + filename , StandardCharsets.UTF_8);
 		    	
 		    	List<String> tmp = Arrays.asList(content.split("\\r?\\n"));

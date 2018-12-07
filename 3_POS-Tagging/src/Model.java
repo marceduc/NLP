@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 
 public class Model {
 	
-	double lambda = 0.5; //smoothening constant
+	double lambda = 0.0; //smoothening constant
+	
 	String name;
 	public Set<String> known_words; 
 	public Set<String> known_tags;
@@ -34,11 +35,14 @@ public class Model {
 	}
 	
 	public void get_knowns(List<String> sentences) {
+		HashMap<String, Integer> tag_counts = new HashMap<String, Integer>();
+		int tag_count = 0;
+		int total = 0;
 		for(String sentence: sentences) {
 			String[] pairs = sentence.split("\\s++");
 			int i = 0;
 			for(String pair:pairs) {	
-				int idx = pair.lastIndexOf("/");				
+				int idx = pair.lastIndexOf("/");
 				String word = pair.substring(0,idx);
 				String tag = pair.substring(idx + 1);
 			
@@ -49,13 +53,29 @@ public class Model {
 				known_words.add(word);
 				known_tags.add(tag);
 				i ++;
+				
+				if(tag_counts.containsKey(tag)) {
+					tag_count = tag_counts.get(tag);
+					tag_count ++;
+					tag_counts.put(tag, tag_count);
+				} else {
+					tag_counts.put(tag, 1);
+				}
+				total ++;
+				
 			}
+		}
+		System.out.println("Total tags in set: " + total);
+		for(String tag : tag_counts.keySet()) {
+			System.out.println(tag + ": " + tag_counts.get(tag));
 		}
 	}
 	
 	public void get_start_p(List<String> sentences) {
 		//initialize start_p
 		double tag_count;
+		int nil_counter = 0;
+		
 		
 		for(String tag: known_tags) {
 			start_p.put(tag, lambda);
@@ -70,6 +90,12 @@ public class Model {
 			int idx = pair.lastIndexOf("/");			
 			String start_tag = pair.substring(idx + 1);
 			
+			if(start_tag.equals("nil")) {
+				//System.out.println("Starttag is: nil!");
+				//System.out.println(sentence);
+				nil_counter ++;
+			}
+			
 			tag_count = start_p.get(start_tag);
 			tag_count ++;
 			start_p.put(start_tag, tag_count);			
@@ -80,36 +106,38 @@ public class Model {
 			p = tag_count/ (N + B * lambda);
 			p = Math.log(p);
 			start_p.put(tag, p);
-		}		
+		}
+		System.out.println(nil_counter);
 	}
 	
 	public void get_emission(List<String> sentences) {
 		
 		
+		
 		//initialize em_mat with lambda values
 		for(String tag : known_tags) {
 			HashMap<String, Double> word_prob = new HashMap<String, Double>();
-			double unknown_prob = 1/ (double) known_tags.size();
-			word_prob.put("un--known-ident", lambda);
-			em_mat.put(tag, word_prob);
+			word_prob.put("un-known-ident", lambda);
 			for(String word : known_words) {
-				//word_prob.clear();
 				word_prob.put(word, lambda);
 			}
+			em_mat.put(tag, word_prob);
 		}
 		
 		//count words per tag
 		HashMap<String, Double> tag_mat = new HashMap<String, Double>();
-		HashMap<String, Double> word_counts = new HashMap<String, Double>();
-		for(String word: known_words) {
-			word_counts.put(word, (double)0 ); 
+		HashMap<String, Double> tag_counts = new HashMap<String, Double>();
+		for(String word: known_tags) {
+			tag_counts.put(word, (double)0 ); 
 		}
+		
 		double tag_word_count;
-		double word_count;
+		//double word_count;
+		double tag_count;
+		
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
-			int i = 0;
-			for(String pair:pairs) {	
+			for(String pair:pairs) {
 				int idx = pair.lastIndexOf("/");				
 				String word = pair.substring(0,idx);
 				String tag = pair.substring(idx + 1);
@@ -119,22 +147,29 @@ public class Model {
 				tag_word_count ++;
 				tag_mat.put(tag, tag_word_count);
 				
-				word_count = word_counts.get(word);
-				word_count ++;
-				word_counts.put(word, word_count);
+				tag_count = tag_counts.get(tag);
+				tag_count ++;
+				tag_counts.put(tag, tag_count);
+				
+				
+				
 			}
 			
 		}
+		
+
+		
 		//normalize
 		double N = 0.0;
 		double B = (double) known_tags.size();;
 		double p = 0.0;
 		
+		
 		for(String tag: known_tags) {
 			tag_mat = em_mat.get(tag);
 			for(String word : known_words) {
 				tag_word_count = tag_mat.get(word);
-				N = word_counts.get(word);
+				N = tag_counts.get(tag);
 				p = tag_word_count / (N + B * lambda);
 				p = Math.log(p);
 				tag_mat.put(word, p);
@@ -145,9 +180,13 @@ public class Model {
 	
 	public void get_transition(List<String> sentences) {
 		
+		HashMap<String, Double> preceder_mat = new HashMap<String, Double>();
+		HashMap<String, Double> preceder_counts = new HashMap<String, Double>();
+		
 		//initialize etr_mat with lambda values
 		for(String preceder: known_tags) {
-			HashMap<String, Double> preceder_mat = new HashMap<String, Double>();
+			//System.out.println(preceder);
+			preceder_mat = new HashMap<String, Double>();
 			for(String follower: known_tags) {
 				preceder_mat.put(follower, lambda);
 			}
@@ -156,15 +195,13 @@ public class Model {
 		
 		
 		//count transitions
-		HashMap<String, Double> preceder_mat = new HashMap<String, Double>();
-		HashMap<String, Double> follower_counts = new HashMap<String, Double>();
-		for(String follower: known_tags) {
-			follower_counts.put(follower, (double) 0.0);
+		for(String preceder: known_tags) {
+			preceder_counts.put(preceder, (double) 0.0);
 		}
 		
 		
 		
-		double follower_count;
+		double preceder_count;
 		double preceder_follower_count;
 		
 		
@@ -178,25 +215,24 @@ public class Model {
 
 			for(int i=1;i <pairs.length; i++) {
 				
-				if(!known_tags.contains(preceder)) {
-					System.out.println(preceder + "unknown, abort!");
-					System.exit(0);
-				}
 				
 				idx = pairs[i].lastIndexOf("/");				
 				follower = pairs[i].substring(idx + 1);
 				
+				preceder_mat = new HashMap<String, Double>();
 				preceder_mat = tr_mat.get(preceder);
+				
 				preceder_follower_count = preceder_mat.get(follower);
 				preceder_follower_count ++;
+				
 				preceder_mat.put(follower, preceder_follower_count);
 				tr_mat.put(preceder, preceder_mat);
 				
-				follower_count = follower_counts.get(follower);
-				follower_count ++;
-				follower_counts.put(follower, follower_count);
+				preceder_count = preceder_counts.get(preceder);
+				preceder_count ++;
+				preceder_counts.put(preceder, preceder_count);
 				
-				preceder = follower;
+				preceder = pairs[i].substring(idx + 1);
 			}
 		}
 		//System.out.println("Follower_counts: ");
@@ -210,9 +246,16 @@ public class Model {
 			preceder_mat = tr_mat.get(preceder);
 			
 			for(String follower : known_tags) {
-				N = follower_counts.get(follower);
+				N = preceder_counts.get(preceder);
 				preceder_follower_count = preceder_mat.get(follower);
 				p = preceder_follower_count / (N + B * lambda);
+				if(preceder.equals("nil"))  {
+					System.out.println(follower + " count :" + preceder_follower_count);
+					System.out.println(N);
+					System.out.println(p);
+				}
+				
+				
 				p = Math.log(p);
 				preceder_mat.put(follower, p);				
 			}
@@ -251,7 +294,13 @@ public class Model {
 			//initialize first position
 			for(String state: known_tags) {
 				p0 = start_p.get(state);
-				em_p = em_mat.get(state).get(first_word);
+				
+				if(known_words.contains(first_word)) {
+					em_p = em_mat.get(state).get(first_word);
+				} else {
+					em_p = em_mat.get(state).get("un-known-ident");
+				}	
+				
 				p = p0 + em_p;
 				pos_state_prob.put(state, p);
 			}
@@ -261,6 +310,9 @@ public class Model {
 			//pos = 1;
 			for(int pos =1; pos < words.size(); pos++) {
 				word = words.get(pos);
+				state_MLL = new HashMap<String, Double>();
+				MLL_state_preceder = new HashMap<String, String>();
+
 				
 				for(String state : known_tags) {
 					//for each state get maximum LLH(from previous states LLHs and transition prob)
@@ -280,6 +332,12 @@ public class Model {
 					}
 					//System.out.println(maxLL);
 					//add MLL of the current state to the temp map of state MLLs
+					if(known_words.contains(word)) {
+						em_p = em_mat.get(state).get(word);
+					} else {
+						em_p = em_mat.get(state).get("un-known-ident");
+					}	
+					
 					maxLL = maxLL + em_mat.get(state).get(word);
 					state_MLL.put(state,maxLL);	
 					MLL_state_preceder.put(state, mLL_preceder);
@@ -287,12 +345,21 @@ public class Model {
 				//add all state MLLs at the given pos to the LLH mat.
 				LLH_mat.put(pos, state_MLL);
 				LLH_preceder.put(pos, MLL_state_preceder);
-				//System.out.print(LLH_mat.get(pos));
-				System.out.println("Position:" + pos);
+				System.out.println("Position:" + pos + True_states.get(pos));
+				if(pos == 3) {
+					//System.out.print(LLH_mat.get(pos));
+					System.out.print(LLH_preceder.get(pos));
+				}
+				
 				//System.out.print(LLH_preceder.get(pos));
 			}
 			
-			/*
+			for(int pos : LLH_preceder.keySet()) {
+				System.out.println(LLH_preceder.get(pos));
+			}
+			
+			//System.exit(0);
+			
 			String expected_last_state = "--";
 			int lastpos = (int) words.size() - 1;
 			maxLL = Double.NEGATIVE_INFINITY;
@@ -312,7 +379,7 @@ public class Model {
 				expected_last_state = LLH_preceder.get(pos).get(expected_last_state);
 				
 			}
-			*/
+			
 			
 		}
 		

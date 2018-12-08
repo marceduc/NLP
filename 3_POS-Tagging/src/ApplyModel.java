@@ -50,10 +50,12 @@ public class ApplyModel {
 		
 		//System.out.println(myMod.known_tags);
 		
+		
 		myMod.get_start_p(sentences);		
 		System.out.println(myMod.start_p.get("at"));
 		System.out.println(myMod.start_p.get("be"));
 		System.out.println(myMod.start_p.get("nil"));
+		//counts are correct
 		
 		myMod.get_emission(sentences);
 		//myMod.get_emission_from_csv("em_short.csv");		
@@ -64,6 +66,10 @@ public class ApplyModel {
 		System.out.println(myMod.em_mat.get("at").get("the"));
 		System.out.println(myMod.em_mat.get("in").get("of"));
 		System.out.println(myMod.em_mat.get("in").get("through"));
+		//Error in counting, values should be 14137, 59668, 34289,843 Validated with R-Script
+		
+		
+		
 		System.exit(0);
 		
 		
@@ -72,7 +78,7 @@ public class ApplyModel {
 		System.out.println(myMod.tr_mat.get("at").get("nn"));
 		System.out.println(myMod.tr_mat.get("nil").get("nil"));
 		System.out.println(myMod.tr_mat.get("pn").get("pn"));
-		
+		//counts are correct
 		
 		
 		

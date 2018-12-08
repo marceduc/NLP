@@ -80,27 +80,20 @@ public class Model {
 	public void get_start_p(List<String> sentences) {
 		//initialize start_p
 		double tag_count;
-		int nil_counter = 0;
 		
-		
+		//initialize start_probabiliites for all possible tags
 		for(String tag: known_tags) {
 			start_p.put(tag, lambda);
 		}
 		double B = (double) known_tags.size();
 		double N = (double) sentences.size();
 		double p;
-
+		//count start tags
 		for(String sentence : sentences) {
 			String[] pairs = sentence.split("\\s++");
 			String pair = pairs[0];
 			int idx = pair.lastIndexOf("/");			
 			String start_tag = pair.substring(idx + 1);
-			
-			if(start_tag.equals("nil")) {
-				//System.out.println("Starttag is: nil!");
-				//System.out.println(sentence);
-				nil_counter ++;
-			}
 			
 			tag_count = start_p.get(start_tag);
 			tag_count ++;
@@ -121,7 +114,7 @@ public class Model {
 		
 		
 		HashMap<String, Double> word_prob = new HashMap<String, Double>();
-		//initialize em_mat with lambda values
+		//initialize em_mat with lambda values 
 		for(String tag : known_tags) {			
 			word_prob.put("un-known-ident", lambda);
 			for(String word : known_words) {
@@ -188,48 +181,11 @@ public class Model {
 		} */		
 	}
 	
-	public void get_emission_from_csv(String csv_name) {
-	    BufferedReader br;
-		try {
-			br = new BufferedReader(new FileReader(csv_name));
 
-	    String line =  null;
-	    HashMap<String,Double> log_prob_word = new HashMap<String, Double>();
-
-	    
-			//while((line=br.readLine())!=null){
-	    	while((line=br.readLine())!=null){	
-			    String str[] = line.split("~");
-			    String tag = str[0];
-			    String word = str[1];
-			    //System.out.println(str[0] + str[1] + str[2]);
-			    double log_p;
-			    if(str[2].equals("0")) {
-			    	 log_p = Double.NEGATIVE_INFINITY;
-			    } else {
-			    	log_p = Double.parseDouble(str[2]);
-			    }
-			    
-			    
-			    if(em_mat.containsKey(tag)) {
-			    	log_prob_word = em_mat.get(tag);
-			    } else {
-			    	log_prob_word = new HashMap<String, Double>();
-			    }
-			    log_prob_word.put(word, log_p);
-			    em_mat.put(tag, log_prob_word);
-			    
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
 	
 	public void get_transition(List<String> sentences) {
-		
 		HashMap<String, Double> preceder_mat = new HashMap<String, Double>();
+		//total count per preceder state for normailization
 		HashMap<String, Double> preceder_counts = new HashMap<String, Double>();
 		
 		//initialize etr_mat with lambda values
@@ -433,6 +389,47 @@ public class Model {
 		}
 		
 		
+	}
+	
+	public void get_emission_from_csv(String csv_name) {
+		//irrelevant
+		//tried to load emission_mat from csv
+	    BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader(csv_name));
+
+	    String line =  null;
+	    HashMap<String,Double> log_prob_word = new HashMap<String, Double>();
+
+	    
+			//while((line=br.readLine())!=null){
+	    	while((line=br.readLine())!=null){	
+			    String str[] = line.split("~");
+			    String tag = str[0];
+			    String word = str[1];
+			    //System.out.println(str[0] + str[1] + str[2]);
+			    double log_p;
+			    if(str[2].equals("0")) {
+			    	 log_p = Double.NEGATIVE_INFINITY;
+			    } else {
+			    	log_p = Double.parseDouble(str[2]);
+			    }
+			    
+			    
+			    if(em_mat.containsKey(tag)) {
+			    	log_prob_word = em_mat.get(tag);
+			    } else {
+			    	log_prob_word = new HashMap<String, Double>();
+			    }
+			    log_prob_word.put(word, log_p);
+			    em_mat.put(tag, log_prob_word);
+			    
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 

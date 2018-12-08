@@ -311,7 +311,7 @@ public class Model {
 				pos_state_prob.put(state, p);
 			}
 			LLH_mat.put(0, pos_state_prob);
-			System.out.println(LLH_mat.get(0));
+			//System.out.println(LLH_mat.get(0));
 			
 			//pos = 1;
 			for(int pos =1; pos < words.size(); pos++) {
@@ -352,17 +352,11 @@ public class Model {
 				LLH_mat.put(pos, state_MLL);
 				LLH_preceder.put(pos, MLL_state_preceder);
 				System.out.println("Position:" + pos + True_states.get(pos));
-				if(pos == 3) {
-					//System.out.print(LLH_mat.get(pos));
-					System.out.print(LLH_preceder.get(pos));
-				}
-				
-				//System.out.print(LLH_preceder.get(pos));
+
+			
 			}
 			
-			for(int pos : LLH_preceder.keySet()) {
-				System.out.println(LLH_preceder.get(pos));
-			}
+
 			
 			//System.exit(0);
 			
@@ -378,15 +372,29 @@ public class Model {
 				}
 			}
 			
+			System.out.println(expected_last_state);
+			String[] predictions = new String[words.size()];
+			predictions[words.size()-1] = expected_last_state;
+			System.out.println(predictions[30]);
+			System.out.println(words.get(30));
+			
 			System.out.println("-----------");
 			for(int pos = words.size()-1; pos > 0; pos--) {
-				System.out.print(pos);
-				System.out.println(expected_last_state);
 				expected_last_state = LLH_preceder.get(pos).get(expected_last_state);
+				System.out.println(pos);
+				System.out.println(expected_last_state);
+				predictions[pos-1] = expected_last_state;
+				//expected_last_state = LLH_preceder.get(pos-1).get(expected_last_state);
 				
 			}
-			
-			
+			//predictions[0] = LLH_preceder.get(0).get(expected_last_state);
+			System.out.println(predictions[1]);
+			String predicted_sentence = "";
+			for(int i = 0; i < words.size(); i++) {
+				predicted_sentence = predicted_sentence + words.get(i) + "/" + predictions[i] + " ";
+			}
+			System.out.println(sentence);
+			System.out.println(predicted_sentence);
 		}
 		
 		

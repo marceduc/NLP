@@ -41,13 +41,42 @@ public class ApplyModel {
 		
 		myMod.get_knowns(sentences);
 		
+		ArrayList<String>subset = new ArrayList<>();
+		subset.add(sentences.get(0));
+		
+		//sentences = subset;
+		
 		
 		
 		//System.out.println(myMod.known_tags);
 		
 		myMod.get_start_p(sentences);		
+		System.out.println(myMod.start_p.get("at"));
+		System.out.println(myMod.start_p.get("be"));
+		System.out.println(myMod.start_p.get("nil"));
+		
 		myMod.get_emission(sentences);
+		//myMod.get_emission_from_csv("em_short.csv");		
+		System.out.println("Emission_stats");
+		//System.out.println(myMod.em_mat);
+		
+		System.out.println(myMod.em_mat.get("to").get("to"));
+		System.out.println(myMod.em_mat.get("at").get("the"));
+		System.out.println(myMod.em_mat.get("in").get("of"));
+		System.out.println(myMod.em_mat.get("in").get("through"));
+		System.exit(0);
+		
+		
 		myMod.get_transition(sentences);
+		//System.out.println(myMod.tr_mat.get(" ").get("at"));
+		System.out.println(myMod.tr_mat.get("at").get("nn"));
+		System.out.println(myMod.tr_mat.get("nil").get("nil"));
+		System.out.println(myMod.tr_mat.get("pn").get("pn"));
+		
+		
+		
+		
+		
 		
 
 		/*
@@ -100,7 +129,7 @@ public class ApplyModel {
 		
 		
 		sentences = sentences_from_path(input_folder);
-		List<String> subset = new ArrayList<>();
+		//List<String> subset = new ArrayList<>();
 		subset.add(sentences.get(0));
 		
 		

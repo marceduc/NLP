@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -65,10 +69,12 @@ public class Model {
 				
 			}
 		}
+		/*
 		System.out.println("Total tags in set: " + total);
 		for(String tag : tag_counts.keySet()) {
 			System.out.println(tag + ": " + tag_counts.get(tag));
 		}
+		*/
 	}
 	
 	public void get_start_p(List<String> sentences) {
@@ -101,22 +107,22 @@ public class Model {
 			start_p.put(start_tag, tag_count);			
 		}
 		//normalize
+		
 		for(String tag: known_tags) {
 			tag_count = start_p.get(tag);
 			p = tag_count/ (N + B * lambda);
 			p = Math.log(p);
 			start_p.put(tag, p);
 		}
-		System.out.println(nil_counter);
+		
 	}
 	
 	public void get_emission(List<String> sentences) {
 		
 		
-		
+		HashMap<String, Double> word_prob = new HashMap<String, Double>();
 		//initialize em_mat with lambda values
-		for(String tag : known_tags) {
-			HashMap<String, Double> word_prob = new HashMap<String, Double>();
+		for(String tag : known_tags) {			
 			word_prob.put("un-known-ident", lambda);
 			for(String word : known_words) {
 				word_prob.put(word, lambda);
@@ -132,7 +138,6 @@ public class Model {
 		}
 		
 		double tag_word_count;
-		//double word_count;
 		double tag_count;
 		
 		for(String sentence : sentences) {
@@ -144,16 +149,21 @@ public class Model {
 				
 				tag_mat = em_mat.get(tag);
 				tag_word_count = tag_mat.get(word);
-				tag_word_count ++;
+				tag_word_count = tag_word_count + 1;
+				//System.out.println("tag: " + tag + " word: " + word + " tag_word_count new: " + tag_word_count );
 				tag_mat.put(tag, tag_word_count);
+				//System.out.println("tagmat coount" +  tag_mat.get(tag));
+				em_mat.put(tag, tag_mat);
+				//System.out.println("em_mat coount" +  em_mat.get(tag).get(word));
 				
 				tag_count = tag_counts.get(tag);
-				tag_count ++;
+				tag_count = tag_count +1;
 				tag_counts.put(tag, tag_count);
 				
 				
 				
 			}
+			//System.out.println("em_mat count to_to " +  em_mat.get("to").get("to"));
 			
 		}
 		
@@ -164,7 +174,7 @@ public class Model {
 		double B = (double) known_tags.size();;
 		double p = 0.0;
 		
-		
+		/*
 		for(String tag: known_tags) {
 			tag_mat = em_mat.get(tag);
 			for(String word : known_words) {
@@ -175,7 +185,46 @@ public class Model {
 				tag_mat.put(word, p);
 			}
 			em_mat.put(tag, tag_mat);
-		}		
+		} */		
+	}
+	
+	public void get_emission_from_csv(String csv_name) {
+	    BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader(csv_name));
+
+	    String line =  null;
+	    HashMap<String,Double> log_prob_word = new HashMap<String, Double>();
+
+	    
+			//while((line=br.readLine())!=null){
+	    	while((line=br.readLine())!=null){	
+			    String str[] = line.split("~");
+			    String tag = str[0];
+			    String word = str[1];
+			    //System.out.println(str[0] + str[1] + str[2]);
+			    double log_p;
+			    if(str[2].equals("0")) {
+			    	 log_p = Double.NEGATIVE_INFINITY;
+			    } else {
+			    	log_p = Double.parseDouble(str[2]);
+			    }
+			    
+			    
+			    if(em_mat.containsKey(tag)) {
+			    	log_prob_word = em_mat.get(tag);
+			    } else {
+			    	log_prob_word = new HashMap<String, Double>();
+			    }
+			    log_prob_word.put(word, log_p);
+			    em_mat.put(tag, log_prob_word);
+			    
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 	
 	public void get_transition(List<String> sentences) {

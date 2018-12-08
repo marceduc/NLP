@@ -41,8 +41,6 @@ public class ApplyModel {
 		
 		myMod.get_knowns(sentences);
 		
-		ArrayList<String>subset = new ArrayList<>();
-		subset.add(sentences.get(0));
 		
 		//sentences = subset;
 		
@@ -69,12 +67,31 @@ public class ApplyModel {
 		//Error in counting, values should be 14137, 59668, 34289,843 Validated with R-Script
 		
 		
+		HMM myHmm = new HMM("myHmm");
+		System.out.println(myHmm.name);
+			
 		
-		System.exit(0);
+
+		
+		myHmm.get_emission(sentences);
+		System.out.println(myHmm.emission_mat.get("to").get("to"));
+		System.out.println(myHmm.emission_mat.get("at").get("the"));
+		System.out.println(myHmm.emission_mat.get("in").get("of"));
+		System.out.println(myHmm.emission_mat.get("in").get("through"));
+		
+		myMod.em_mat = myHmm.emission_mat;
+		myMod.p_from_em_count();
+		System.out.println(myHmm.emission_mat.get("to").get("to"));
+		System.out.println(myHmm.emission_mat.get("at").get("the"));
+		System.out.println(myHmm.emission_mat.get("in").get("of"));
+		System.out.println(myHmm.emission_mat.get("in").get("through"));
+		//in/ throught freq, p correct, log_p incorrect?!
+		
 		
 		
 		myMod.get_transition(sentences);
 		//System.out.println(myMod.tr_mat.get(" ").get("at"));
+		System.out.println("transition_stats");
 		System.out.println(myMod.tr_mat.get("at").get("nn"));
 		System.out.println(myMod.tr_mat.get("nil").get("nil"));
 		System.out.println(myMod.tr_mat.get("pn").get("pn"));
@@ -135,7 +152,7 @@ public class ApplyModel {
 		
 		
 		sentences = sentences_from_path(input_folder);
-		//List<String> subset = new ArrayList<>();
+		List<String> subset = new ArrayList<>();
 		subset.add(sentences.get(0));
 		
 		
@@ -147,7 +164,7 @@ public class ApplyModel {
 		
 		System.exit(0);
 		
-		HMM myHmm = new HMM("myHmm");
+		//HMM myHmm = new HMM("myHmm");
 		System.out.println(myHmm.name);
 			
 		

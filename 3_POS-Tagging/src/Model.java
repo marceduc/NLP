@@ -254,12 +254,13 @@ public class Model {
 				N = preceder_counts.get(preceder);
 				preceder_follower_count = preceder_mat.get(follower);
 				p = preceder_follower_count / (N + B * lambda);
+				/*
 				if(preceder.equals("nil"))  {
 					System.out.println(follower + " count :" + preceder_follower_count);
 					System.out.println(N);
 					System.out.println(p);
 				}
-				
+				*/
 				
 				p = Math.log(p);
 				preceder_mat.put(follower, p);				
@@ -389,6 +390,26 @@ public class Model {
 		}
 		
 		
+	}
+	
+	public void p_from_em_count() {
+		for(String tag : em_mat.keySet()) {
+			HashMap<String, Double> tag_probs = em_mat.get(tag);
+			double tag_total = 0.0;
+			for(Double f : tag_probs.values()) {
+				tag_total += f;
+			}
+			
+			
+			for(String word: tag_probs.keySet()) {
+				double p = tag_probs.get(word);
+				p = p / tag_total;
+				p = Math.log(p); //produces implausible value for in/through emission
+				tag_probs.put(word, p);
+			}
+			em_mat.put(tag, tag_probs);
+			
+		}
 	}
 	
 	public void get_emission_from_csv(String csv_name) {

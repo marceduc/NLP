@@ -27,7 +27,7 @@ public class HMM {
 	public Set<String> known_words; 
 	public Set<String> known_tags; 
 	
-	double lambda = 0.5; //smoothening constant
+	double lambda = 0.0; //smoothening constant
 	
 	public HMM(String name){
 		
@@ -82,7 +82,7 @@ public class HMM {
 				start_prob.put(key, val);
 				//System.out.println(key + start_prob.get(key) );
 				
-			}
+			} 
 		}
 		
 	}
@@ -191,7 +191,7 @@ public class HMM {
 		}
 		
 		double unseen_count; 
-		
+		/*
 		//normalize emission matrix
 		for(String word : word_counts.keySet()) {
 			for(String tag : emission_mat.keySet()) {
@@ -213,6 +213,7 @@ public class HMM {
 				}
 			}
 		}
+		*/
 			
 	}
 	

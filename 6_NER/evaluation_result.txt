@@ -1,0 +1,2875 @@
+Document: 1205
+FN (wee1/mik1-deficient,177975,177994)
+
+Document: 559
+FP (FDP,86063,86066)
+
+Document: 765
+FN (beta-2-M),116644,116653)
+
+Document: 1501
+FN (SF2/ASF.,226564,226572)
+FN (phage lambda cI repressor,226696,226721)
+
+Document: 442
+FP (acetyl-CoA,67598,67608)
+
+Document: 101
+FP (BCP.,15760,15764)
+
+Document: 173
+FP (ORF2s,27129,27134)
+
+Document: 523
+FN (SF,81375,81377)
+
+Document: 1707
+FN (Pax6,262617,262621)
+
+Document: 1393
+FP (Ets family,209539,209549)
+FN (Ets family of transcription factors,209539,209574)
+FN (P4 EBS,209582,209588)
+
+Document: 191
+FN (P1 purinoceptors,29703,29719)
+
+Document: 1402
+FN (ufo mRNA,211159,211167)
+
+Document: 1815
+FN (H19,278592,278595)
+FN (Igf2,278600,278604)
+
+Document: 828
+FP (BC3H1,125866,125871)
+
+Document: 1142
+FN (serpins,167877,167884)
+
+Document: 1456
+FP (Factor V Leiden,219505,219520)
+
+Document: 83
+FP (gravida V para 0,12405,12421)
+
+Document: 1151
+FP (human RSK cDNA,169520,169534)
+FP (K91A (N-Lys,169618,169629)
+FP (subdomain VIII,169825,169839)
+FN (RSK,169526,169529)
+
+Document: 505
+FP (cardiac isoforms,78422,78438)
+
+Document: 1689
+FP (factor-1 alpha,259373,259387)
+FN (TEF,259335,259338)
+FN (translation elongation factor-1 alpha,259350,259387)
+FN (RPS7,259392,259396)
+
+Document: 1698
+FN (zinc finger protein,261058,261077)
+
+Document: 245
+FP (DD95,38128,38132)
+
+Document: 1366
+FN (RAD+,205354,205358)
+
+Document: 1806
+FP (:HIS3 chromosomal locus,277282,277305)
+FN (mutant pho85,277267,277279)
+FN (chromosomal locus,277288,277305)
+
+Document: 783
+FP (vimentin promoter,119477,119494)
+FN (vimentin,119477,119485)
+
+Document: 792
+FP (GH,120831,120833)
+
+Document: 1133
+FN (chloramphenicol-resistance transposon,166375,166412)
+FN (Tn4451,166413,166419)
+
+Document: 451
+FP (PC2 subgroup,68972,68984)
+
+Document: 1106
+FP (NF19,162499,162503)
+
+Document: 460
+FN (mouse mammary tumor virus MMTV-CAT reporter,70871,70914)
+
+Document: 119
+FP (rifampin,18841,18849)
+
+Document: 873
+FN (NTE,132435,132438)
+
+Document: 1734
+FN (Y259 scFv,265442,265451)
+
+Document: 406
+FP (PKR,62306,62309)
+FN (endogenous PKR,62295,62309)
+
+Document: 756
+FN (fodrin,115168,115174)
+
+Document: 1510
+FP (E-box 1 and E-box 2 elements,228377,228405)
+
+Document: 1716
+FP (GaAs/( Al, Ga),263844,263858)
+
+Document: 1375
+FP (SF3a/SF3b subunits,206317,206335)
+FN (SF3a/SF3b,206317,206326)
+
+Document: 1797
+FN (HD-Zip,275764,275770)
+
+Document: 236
+FN (TFIIIB,36599,36605)
+
+Document: 741
+FP (chicken IGF-I 5'-flanking,113004,113029)
+FN (IGF-I,113012,113017)
+
+Document: 678
+FP (endogenous nitrovasodilator EDRF.,103047,103080)
+FP (IL,103177,103179)
+FN (EDRF.,103075,103080)
+
+Document: 23
+FN (CAM5.2,3245,3251)
+
+Document: 95
+FP (SAP,14821,14824)
+
+Document: 445
+FP (carp,68085,68089)
+FP (JAK1 kinase gene,68090,68106)
+FN (carp JAK1 kinase gene,68085,68106)
+
+Document: 1656
+FP (Human isoforms,253679,253693)
+
+Document: 1324
+FP (Chicken sterol carrier protein 2/sterol carrier protein,197519,197574)
+FN (sterol carrier protein 2/sterol,197527,197558)
+FN (carrier protein x,197559,197576)
+
+Document: 1297
+FP (64-kDa protein,193086,193100)
+
+Document: 1306
+FP (HB,194614,194616)
+FN (HB antibodies,194614,194627)
+
+Document: 1746
+FP (C751,267088,267092)
+FP (carcinoembryonic antigen [CEA,267160,267189)
+FN (Opa proteins,267072,267084)
+FN (carcinoembryonic antigen,267160,267184)
+FN (CD66e,267192,267197)
+FN (CGM1-,267262,267267)
+FN (CD66d,267270,267275)
+FN (NCA,267282,267285)
+FN (CD66c)-expressing,267288,267305)
+
+Document: 1405
+FP (SRF,211751,211754)
+FN (wild-type SRF,211741,211754)
+
+Document: 1952
+FP (hepatocyte nuclear factor,300325,300350)
+FN (forkhead homologue in rhabdomyosarcoma,300240,300278)
+FN (hepatocyte nuclear factor 3/forkhead,300325,300361)
+FN (NR,300417,300419)
+
+Document: 1934
+FN (MR,298069,298071)
+
+Document: 472
+FP (N-terminal RNA binding domain,72856,72885)
+FN (virus E3L,73040,73049)
+FN (rotavirus VP2,73052,73065)
+FN (rotavirus NS34),73120,73135)
+
+Document: 131
+FP (Samarium-153,20717,20729)
+
+Document: 1360
+FP (dsk1+ gene,204162,204172)
+FP (61-kd protein kinase,204248,204268)
+FN (fission yeast dsk1+ gene,204148,204172)
+
+Document: 1369
+FP (carboplatin,205639,205650)
+
+Document: 1441
+FN (immunoglobulin-like CAGGG pentamer sequences,217287,217331)
+
+Document: 463
+FN (incC-mediated,71320,71333)
+FN (KorB-binding site ( O( B) ),71355,71382)
+
+Document: 122
+FN (LDL-FC.,19367,19374)
+
+Document: 1737
+FP (PDGF-BB-, IGF-I,266231,266246)
+FN (PDGF-BB-,,266231,266240)
+FN (IGF-I,266241,266246)
+FN (EGF)-induced,266296,266308)
+
+Document: 1396
+FP (intercalated SRS R(61,2 ) (-)-(7S,8R,9S,10R)-N6-[10-(7,8,9,10- tetrahydrobenzo[a]pyrenyl )]-2'-deoxyadenosyl adduct from 1H NMR.,210040,210168)
+
+Document: 418
+FP (nafarelin,63801,63810)
+FP (nafarelin,63952,63961)
+FP (nafarelin,64104,64113)
+FP (nafarelin,64260,64269)
+
+Document: 1943
+FN (p19(INK4d,298991,299000)
+
+Document: 158
+FP (Isoptin,25041,25048)
+
+Document: 167
+FN (goosecoid,26079,26088)
+
+Document: 1692
+FN (Paralemmin,259821,259831)
+
+Document: 1351
+FP (GATA-1,202690,202696)
+FN (GATA-1 consensus sequence,202690,202715)
+
+Document: 1791
+FN (mouse Elavl1,274340,274352)
+FN (mHuA,274355,274359)
+FN (mHuA,274462,274466)
+
+Document: 1387
+FN (Env,208345,208348)
+FN (Env,208464,208467)
+FN (gp160,208543,208548)
+FN (gp120,208578,208583)
+FN (gp41,208588,208592)
+FN (Env,208601,208604)
+FN (gp120,208655,208660)
+FN (gp41,208692,208696)
+
+Document: 705
+FP (cdc68-1,106467,106474)
+FN (cdc68-1 mutant,106467,106481)
+
+Document: 50
+FP (sec72-1,7611,7618)
+FN (sec72-1 mutations,7611,7628)
+
+Document: 1773
+FP (HB3,271492,271495)
+FP (Dd2,271500,271503)
+
+Document: 1118
+FN (hGMR,164156,164160)
+FN (hGMR,164230,164234)
+
+Document: 373
+FN (C/EBP-binding sites,57453,57472)
+
+Document: 1154
+FN (CVA16.4 proteolipid transcript,170261,170291)
+
+Document: 1127
+FP (IL-3)-dependent Ba/F3,165804,165825)
+FN (hG-CSFR,165615,165622)
+FN (hG-CSFR,165724,165731)
+FN (IL-3)-dependent,165804,165819)
+
+Document: 481
+FP (RPL16A gene,74664,74675)
+FN (functional RPL16A gene,74653,74675)
+
+Document: 454
+FN (CDR3s,69488,69493)
+
+Document: 149
+FN (AAA class,23685,23694)
+
+Document: 1333
+FN (c-type cytochromes,199455,199473)
+
+Document: 1647
+FP ((c-Cbl,252423,252429)
+FN (Cbl-b),252434,252440)
+
+Document: 1683
+FN (csrS,258345,258349)
+
+Document: 1755
+FP (Ras and Rac,268666,268677)
+FN (Ras,268666,268669)
+FN (Rac,268674,268677)
+
+Document: 696
+FP (HLA-DQA1 locus,105334,105348)
+FP (Y3/Ring 4 locus,105361,105376)
+FN (HLA-DQA1,105334,105342)
+FN (Y3/Ring,105361,105368)
+FN (4,105369,105370)
+
+Document: 1450
+FP (InlC,218385,218389)
+FP (Caco-2,218521,218527)
+FN (InlC deletion mutant,218385,218405)
+
+Document: 1764
+FN (eIF4A,269912,269917)
+FN (eIF4GI,269944,269950)
+FN (eIF4A,270009,270014)
+
+Document: 735
+FP (aroF,111885,111889)
+FN (aroF regulatory regions,111885,111908)
+FN (E. coli TyrR repressor,112096,112118)
+
+Document: 708
+FP (retinoic acid and/or 8-bromo-cAMP.,106910,106944)
+FN (nifB,107043,107047)
+
+Document: 367
+FN (chaperonins,56591,56602)
+
+Document: 403
+FP (family encoding mouse ribosomal protein S16,61794,61837)
+FN (mouse ribosomal protein S16,61810,61837)
+
+Document: 62
+FP (human endogenous retrovirus-like sequences,9519,9561)
+FN (T,9458,9459)
+
+Document: 1928
+FP (cyclin A2/cdk2 complex,297278,297300)
+FN (cyclin A2/cdk2,297278,297292)
+
+Document: 134
+FP (cefazolin,21182,21191)
+
+Document: 1255
+FP (V beta locus,186482,186494)
+FN (Alu,186554,186557)
+FN (L1,186566,186568)
+
+Document: 1354
+FP (PfCPK cDNA,203073,203083)
+FN (full-length PfCPK cDNA,203061,203083)
+
+Document: 609
+FP (bovine papillomavirus-1,92881,92904)
+FP (E2 protein,92989,92999)
+FN (full-length E2 protein,92977,92999)
+
+Document: 1677
+FP (bovine mRNA,257770,257781)
+FN (S27a,257675,257679)
+
+Document: 1336
+FP (gB gene,199744,199751)
+FN (17 hep syn gB gene,199733,199751)
+FN (17 syn+,199815,199822)
+
+Document: 690
+FN (TGEK tetrapeptide,104602,104619)
+
+Document: 35
+FP (element-binding protein-2 mRNA,5481,5511)
+FN (sterol response element-binding protein-2 mRNA,5465,5511)
+
+Document: 376
+FP (globin locus,57930,57942)
+FN (globin locus control regions,57930,57958)
+
+Document: 762
+FN (Ulysses element,115985,116000)
+
+Document: 44
+FN (fibronectin,6906,6917)
+
+Document: 1883
+FP (human skeletal muscle mRNA,289656,289682)
+FN (IGFIR,289569,289574)
+
+Document: 771
+FN (protein C,117870,117879)
+
+Document: 1982
+FP (-1 )/CAT reporter gene,305495,305517)
+
+Document: 26
+FN (uvsY,3716,3720)
+FN (uvsY hexamer,3822,3834)
+
+Document: 1578
+FN (twist,240592,240597)
+FN (twist expression domain,240636,240659)
+
+Document: 1991
+FP (WCXR,306556,306560)
+
+Document: 1650
+FP (U2 small nuclear ribonucleoprotein,252714,252748)
+FN (U2AF,252707,252711)
+FN (U2 small nuclear ribonucleoprotein particle [snRNP ] auxiliary factor,252714,252783)
+
+Document: 1246
+FP (RNA polymerase II CTD kinase TFIIH/TFIIK.,184755,184796)
+FN (TFIIH/TFIIK.,184784,184796)
+
+Document: 1659
+FN (BCR/ABL-expressing,254123,254141)
+FN (G-CSF-induced,254250,254263)
+
+Document: 1318
+FP (SAP-1,196531,196536)
+FN (mature SAP-1,196524,196536)
+FN (transmembrane-type PTP,196573,196595)
+FN (PTP-conserved domain,196623,196643)
+
+Document: 672
+FN (W,102333,102334)
+
+Document: 304
+FP (ITIM,46723,46727)
+
+Document: 1399
+FP (WM12,210618,210622)
+FN (TCR/CD3-induced,210640,210655)
+
+Document: 340
+FP (O-2A/c-myc,52147,52157)
+FN (APprog complexes,52199,52215)
+
+Document: 1408
+FN (FR-19 amino acid sequence,212260,212285)
+FN (mouse embryonic TEA domain-containing factor,212377,212421)
+
+Document: 80
+FP (K14,12040,12043)
+FP (Gcn5p,12100,12105)
+FN (recombinant Gcn5p,12088,12105)
+FN (gcn5,12175,12179)
+
+Document: 1946
+FN (oncoprotein Hdm2,299314,299330)
+
+Document: 1605
+FN (GNEF,245118,245122)
+
+Document: 1641
+FP (GATA-1/SP1 erythroid-specific,251363,251392)
+FN (GATA-1/SP1,251363,251373)
+
+Document: 1300
+FP (synthase/phosphatase complex,193608,193636)
+FN (trehalose-6-phosphate synthase/phosphatase complex,193586,193636)
+FN (glc6,193676,193680)
+
+Document: 1614
+FP (Hst6p transporter,246658,246675)
+FN (Hst6p,246658,246663)
+
+Document: 1273
+FN (MADS domain,189050,189061)
+
+Document: 627
+FP (PU.1,95465,95469)
+FN (v-ets,95420,95425)
+FN (myeloid/B-cell-specific factor PU.1,95434,95469)
+
+Document: 1282
+FP (dibasic proprotein processing enzyme furin,190636,190678)
+FN (furin,190673,190678)
+
+Document: 1695
+FN (CSF,260449,260452)
+
+Document: 636
+FP (human gene,97071,97081)
+FP (rat gene,97110,97118)
+
+Document: 295
+FP (cis-acting kappa B sites,45214,45238)
+FN (kappa B sites,45225,45238)
+
+Document: 1937
+FN (VH/VL-chains,298272,298284)
+
+Document: 116
+FN (rolling-circle replication (RCR ) initiator proteins,18254,18306)
+
+Document: 663
+FP (P105 promoter TATA box,101270,101292)
+FN (P105,101270,101274)
+
+Document: 744
+FP (BSP-2,113295,113300)
+
+Document: 439
+FN (p53-DNA complexes,67205,67222)
+
+Document: 71
+FP (Serum prolactin,10759,10774)
+FN (prolactin,10765,10774)
+
+Document: 1291
+FP (human TCRAC/TCRDC region,192098,192122)
+FN (TCRAC/TCRDC,192104,192115)
+FN (TCRAJ gene segments,192227,192246)
+
+Document: 1713
+FP (SRE:Luc,263258,263265)
+
+Document: 313
+FP (yeast transactivator,48287,48307)
+FP (herpesvirus transactivator,48380,48406)
+FP (GAL4 DNA-binding sites,48531,48553)
+FN (GAL4,48531,48535)
+
+Document: 726
+FP (ROSP,110335,110339)
+FP (ROSP,110559,110563)
+
+Document: 1040
+FP (Martin,152760,152766)
+
+Document: 322
+FP (Buserelin,49326,49335)
+
+Document: 1886
+FP (forkhead transcription factor FKHR-L1,290080,290117)
+FN (forkhead transcription factor,290080,290109)
+FN (FKHR-L1,290110,290117)
+FN (PI3K-dependent,290161,290175)
+
+Document: 11
+FP (recombinant C alpha,1889,1908)
+FN (RI,1874,1876)
+FN (C alpha,1901,1908)
+
+Document: 307
+FN (cad +55/+75 element,46962,46981)
+
+Document: 1877
+FP (J( H) gene segments,288495,288514)
+FP (Vkappa,288535,288541)
+FP (Jkappa genes,288548,288560)
+
+Document: 388
+FP (U6 small nuclear RNA ( snRNA ) loci,59991,60026)
+FN (U6 small nuclear RNA,59991,60011)
+FN (polymerase III-transcribed,60054,60080)
+
+Document: 74
+FN (rho-independent transcription terminator,11372,11412)
+
+Document: 1276
+FN (hrpRS,189624,189629)
+FN (hrpL,189634,189638)
+FN (HrpS,189690,189694)
+FN (hrpL,189718,189722)
+FN (HrpL,189727,189731)
+FN (HrpL-responsive genes,189782,189803)
+
+Document: 262
+FN (Ubx unit exons,40105,40119)
+
+Document: 298
+FP (mucin-type gene family,45611,45633)
+FN (mucin-type gene,45611,45626)
+
+Document: 711
+FN (Rhizobium meliloti insertion sequence ISRm3,107458,107501)
+FN (ISRm3,107559,107564)
+FN (Staphylococcus aureus IS256,107586,107613)
+FN (Thiobacillus ferrooxidans IST2,107618,107648)
+
+Document: 370
+FP (traW gene of the Escherichia coli K-12 sex factor , F,56839,56892)
+FN (traW gene of the Escherichia coli K-12 sex factor,56839,56888)
+
+Document: 684
+FN (41.5 kDa pro-PrB,104075,104091)
+
+Document: 29
+FP (human Ha-ras,4343,4355)
+FP (bacterial lactose operon,4377,4401)
+FN (activated human Ha-ras,4333,4355)
+FN (bacterial lactose operon regulatory elements,4377,4421)
+
+Document: 343
+FN (Legionella antibodies,52691,52712)
+
+Document: 352
+FP (DK20,54587,54591)
+
+Document: 1563
+FP (multisubunit protease,237612,237633)
+
+Document: 47
+FP (homeobox gene,7246,7259)
+FN (empty spiracles,7230,7245)
+
+Document: 1913
+FP (Src homology 2-domain-containing phosphatases,294358,294403)
+FP (BCR,294520,294523)
+FN (PTP-deficient,294230,294243)
+FN (cytoplasmic Src homology 2-domain-containing phosphatases,294346,294403)
+FN (BCR complex,294520,294531)
+
+Document: 1572
+FN (U4/U6),239442,239448)
+
+Document: 576
+FN (TSH-Screening,88334,88347)
+
+Document: 1231
+FP (endogenous RNA polymerase I.,182626,182654)
+FP (serum alkaline phosphatase,182890,182916)
+FP (serum albumin,182958,182971)
+FN (NSE,182832,182835)
+FN (alkaline phosphatase,182896,182916)
+FN (albumin,182964,182971)
+
+Document: 585
+FP (83A complex,89298,89309)
+
+Document: 899
+FP (factor II and factor VII,136106,136130)
+FN (factor II,136106,136115)
+FN (factor VII,136120,136130)
+
+Document: 1339
+FN (ARNT,200573,200577)
+FN (90-kDa heat shock protein,200590,200615)
+
+Document: 1312
+FP (QA/Q I,195384,195390)
+
+Document: 1662
+FP (heterogeneous nuclear ribonucleoprotein C protein tetramer,254889,254947)
+FN (nuclear ribonucleoprotein C protein tetramer,254903,254947)
+
+Document: 1348
+FP (calmodulin-like protein CLP,202152,202179)
+FN (calmodulin-like protein,202152,202175)
+FN (CLP,202176,202179)
+
+Document: 20
+FP (Deformed group protein HOXD-4.,2751,2781)
+FN (HOXD-4.,2774,2781)
+
+Document: 1554
+FN (CD23,236405,236409)
+FN (sIg,236414,236417)
+
+Document: 1527
+FN (cytosolic GAPDH.,231755,231771)
+
+Document: 1186
+FN (Xenopus laevis conserved zinc-finger protein,175162,175206)
+
+Document: 1967
+FP (Pc protein M33,302762,302776)
+FN (Pc protein,302762,302772)
+FN (M33,302773,302776)
+FN (AF9,302800,302803)
+
+Document: 1626
+FP (human complex II ( succinate-ubiquinone oxidoreductase,248635,248689)
+FN (human complex II,248635,248651)
+FN (succinate-ubiquinone oxidoreductase,248654,248689)
+FN (SDHC,248802,248806)
+FN (SDHD,248821,248825)
+
+Document: 1635
+FP (RIL gene,250202,250210)
+FN (human RIL gene,250196,250210)
+
+Document: 1294
+FP (ammonia lyase,192754,192767)
+FN (Rhodosporidium toruloides phenylalanine ammonia lyase,192714,192767)
+FN (PAL)-encoding,192770,192783)
+
+Document: 1608
+FN (collagen/ml,245566,245577)
+
+Document: 890
+FN (IHF.,134912,134916)
+
+Document: 630
+FN (GAL4-VP16-mediated,95985,96003)
+
+Document: 1850
+FP (U6-U57 mutants,283854,283868)
+FN (U6-U57,283854,283860)
+
+Document: 1509
+FP (several receptor protein kinases,227997,228029)
+FN (receptor protein kinases from plants,228005,228041)
+FN (S-receptor kinases,228056,228074)
+FN (Pto gene product of tomato,228146,228172)
+
+Document: 1518
+FP (Rep-Rep protein,229657,229672)
+FP (protein-Rep78,229795,229808)
+FN (Rep-Rep,229657,229664)
+FN (maltose-binding protein-Rep78,229779,229808)
+FN (Rep78,229868,229873)
+
+Document: 1177
+FN (Ran-binding protein,173811,173830)
+
+Document: 1931
+FN (Nrf2,297543,297547)
+
+Document: 1590
+FN (PU,242202,242204)
+FN (PD,242209,242211)
+
+Document: 1599
+FP (PDGF receptor protein,243585,243606)
+FN (engineered PDGF receptor protein,243574,243606)
+
+Document: 612
+FP (T-cell receptor beta (TCR beta ) gene rearrangements,93314,93366)
+FN (T-cell receptor beta,93314,93334)
+FN (beta,93340,93344)
+
+Document: 1500
+FN (SR,226527,226529)
+
+Document: 1814
+FP (endogenous c-Myb promoter,278508,278533)
+FN (c-Myb promoter,278519,278533)
+
+Document: 5
+FP (postulated DNA binding region,897,926)
+FN (ERCC3Dm protein,758,773)
+FN ('helicase ' domains,937,956)
+
+Document: 1844
+FP (NCP BVDV type 1,282960,282975)
+
+Document: 1189
+FN (ponA,175552,175556)
+
+Document: 1530
+FP (rrnB T2,232433,232440)
+FP (rrnB T1,232501,232508)
+FN (rrnB,232433,232437)
+FN (rrnB,232501,232505)
+
+Document: 516
+FN (hect-domain,80276,80287)
+
+Document: 857
+FP (topoisomerase I,130442,130457)
+FN (eukaryotic topoisomerase I,130431,130457)
+
+Document: 1171
+FP (gp91-phox gene,172973,172987)
+FN (gp91-phox,172973,172982)
+
+Document: 1512
+FP (NFAT,228646,228650)
+FN (NFAT RIR,228646,228654)
+
+Document: 866
+FP (12 micrograms/kg/min IV.,131504,131528)
+
+Document: 1180
+FN (Ypt,174168,174171)
+FN (Ypt,174214,174217)
+
+Document: 597
+FN (ThrRS/CGU operator complex,90716,90742)
+
+Document: 193
+FP (Cltp,29843,29847)
+
+Document: 1288
+FP (vertebrate striated TnT isoforms,191518,191550)
+FN (TnT isoforms,191538,191550)
+
+Document: 1754
+FN (G4RE,268470,268474)
+
+Document: 301
+FN (TCR-MHC,46001,46008)
+
+Document: 615
+FP (SNF1 protein kinase,93833,93852)
+FN (SNF1,93833,93837)
+
+Document: 1826
+FP (GAP,280118,280121)
+
+Document: 1799
+FN (TbRAB31,275999,276006)
+FN (TbRAB31,276058,276065)
+
+Document: 1566
+FP (BMS614,238223,238229)
+FP (RAR AF-2 domains,238269,238285)
+FN (RXRalphaF318A,238138,238151)
+FN (RAR,238269,238272)
+
+Document: 821
+FN (mustard chloroplast gene rps16,124882,124912)
+
+Document: 480
+FN (immediate early genes,74483,74504)
+
+Document: 1862
+FP (150-kDa nuclear RNA binding protein,286277,286312)
+FN (Drosophila melanogaster suppressor of sable gene,286199,286247)
+FN (su(s ),286250,286256)
+FN (SU(S),286315,286320)
+
+Document: 1144
+FN (CIITA,168173,168178)
+FN (CIITA-expressing,168329,168345)
+
+Document: 803
+FN (MAP1-specific and MAP2-specific mRNAs,122151,122188)
+
+Document: 1458
+FN (nonmuscle myosin,219896,219912)
+
+Document: 1871
+FN (TG-treated,287917,287927)
+FN (NFI-DNA,287943,287950)
+
+Document: 337
+FN (SAA,51673,51676)
+
+Document: 1270
+FP (bovine gene,188515,188526)
+
+Document: 292
+FN (Coronatine,44610,44620)
+
+Document: 1593
+FN (mu2,242430,242433)
+FN (CTLA-4,242486,242492)
+
+Document: 507
+FP (Bcl-2 and Bcl-x( L ),78823,78843)
+FN (Bcl-2,78823,78828)
+FN (Bcl-x( L ),78833,78843)
+FN (14-3-3tau,78869,78878)
+
+Document: 166
+FP (M-1 s-1,26012,26019)
+
+Document: 14
+FP (TCOF1,2172,2177)
+FN (TCOF1 mutations,2172,2187)
+
+Document: 489
+FN (cpeCD,75748,75753)
+FN (phycoerythrin hexamers,75805,75827)
+FN (phycobilisome,75835,75848)
+
+Document: 1557
+FN (ELL functional domains,236876,236898)
+
+Document: 561
+FP (Vikalin,86375,86382)
+
+Document: 902
+FP (intrinsic protein tyrosine kinase,136628,136661)
+FN (protein tyrosine kinase,136638,136661)
+
+Document: 884
+FP (vinculin cDNA,134069,134082)
+FN (vinculin cDNA from chick-embryo fibroblasts,134069,134112)
+
+Document: 1225
+FP (MDL 73,147EF,181645,181657)
+
+Document: 202
+FN (Stat-binding sites,30822,30840)
+
+Document: 238
+FP (parathyroid hormone-adenylate cyclase,37093,37130)
+FN (parathyroid hormone-adenylate,37093,37122)
+FN (cyclase,37123,37130)
+
+Document: 1763
+FP (Sak kinase gene,269809,269824)
+FN (Sak kinase,269809,269819)
+
+Document: 651
+FP (Drosophila genes,99690,99706)
+
+Document: 310
+FN (integration host factor,47660,47683)
+FN (type 1 fimbriae,47707,47722)
+
+Document: 1772
+FN (human alternatively spliced truncated reduced folate carrier,271225,271285)
+
+Document: 277
+FN (UAS1MLS1,42522,42530)
+FN (ICL1,42670,42674)
+
+Document: 474
+FP (NaTPP,73443,73448)
+
+Document: 824
+FP (Insert2,125150,125157)
+FN (small Ig-related sequence,125209,125234)
+
+Document: 142
+FP (N HC1,22395,22400)
+
+Document: 151
+FN (Tat-induced,23956,23967)
+FN (Tat/Jun-expression,24017,24035)
+
+Document: 250
+FP (stage-2,38681,38688)
+
+Document: 223
+FP (RepC protein,34212,34224)
+FN (initiator RepC protein,34202,34224)
+
+Document: 259
+FN (CR2/CD21,39688,39696)
+
+Document: 1443
+FN (CES1,217418,217422)
+
+Document: 1793
+FN (hamster CYP7A1 proximal promoter,274769,274801)
+
+Document: 438
+FN (CRF.,66782,66786)
+FN (psi zeta,66953,66961)
+
+Document: 1192
+FP (BTU2 ) gene,176099,176110)
+FN (BTU2,176099,176103)
+
+Document: 447
+FN (plasma ANP,68333,68343)
+
+Document: 106
+FN (ZF-HD,16722,16727)
+
+Document: 555
+FP (oestradiol-17 beta,85574,85592)
+
+Document: 528
+FN (gammaS transcripts,82151,82169)
+
+Document: 1739
+FP (subgroup-IIA1,266625,266638)
+
+Document: 1407
+FN (EP4R cDNA,212175,212184)
+
+Document: 761
+FP (Ylp,115879,115882)
+
+Document: 1856
+FN (PTEN,285247,285251)
+
+Document: 1515
+FP (pV-mediated activation of HIV-1 LTR,229028,229063)
+FN (HIV-1 LTR,229054,229063)
+FN (NF-kappaB-independent,229261,229282)
+
+Document: 1829
+FP (mammalian gene,280631,280645)
+FN (MADS-box,280541,280549)
+FN (forkhead protein,280556,280572)
+
+Document: 1488
+FP (CREB/,224667,224672)
+FP (AP1,224673,224676)
+FP (beta-globin TATA box,224725,224745)
+FN (CREB/ AP1,224667,224676)
+FN (beta-globin,224725,224736)
+
+Document: 1183
+FP (DR + 4,174868,174874)
+FN (hPPAR,174798,174803)
+
+Document: 842
+FP (U2 RNAs,127915,127922)
+FN (metazoan U2 RNAs,127906,127922)
+
+Document: 1156
+FN (Shc-associated,170598,170612)
+
+Document: 160
+FP (weight/height2,25275,25289)
+
+Document: 510
+FP (IS1170,79158,79164)
+
+Document: 169
+FP (v-ras Ha retrovirus,26372,26391)
+FN (v-ras Ha,26372,26380)
+
+Document: 1730
+FP (serum CA 19-9,265015,265028)
+FN (CA 19-9,265021,265028)
+
+Document: 1712
+FN (KSR.,263134,263138)
+
+Document: 1129
+FN (E2F-like sequences,166035,166053)
+
+Document: 1138
+FN (PAI,167309,167312)
+
+Document: 1479
+FN (GATE.,223401,223406)
+
+Document: 797
+FP (PF18 S , 1.8 mm,121690,121705)
+
+Document: 806
+FP (Serum prostatic acid phosphatase,122546,122578)
+FN (prostatic acid phosphatase,122552,122578)
+
+Document: 1219
+FN (cellular nucleic acid-binding protein,180412,180449)
+
+Document: 1775
+FN (APOE epsilon4/*,271688,271703)
+
+Document: 1721
+FN (ubiquitin-dependent,264293,264312)
+
+Document: 268
+FN (cyclooxygenase products,40996,41019)
+
+Document: 241
+FN (tam A gene of Aspergillus nidulans,37535,37569)
+FN (Uga35p/Dal81p/DurLp,37622,37641)
+
+Document: 1661
+FP (C3a anaphylatoxin receptor,254585,254611)
+FP (G-protein coupled chemoattractant receptor,254646,254688)
+FN (complement C3a anaphylatoxin receptor,254574,254611)
+FN (seven-transmembrane G-protein coupled chemoattractant receptor,254626,254688)
+
+Document: 1320
+FN (homeodomain-binding element,196826,196853)
+
+Document: 1670
+FN (VDR-TR,256193,256199)
+
+Document: 1984
+FN (DUB-2,305624,305629)
+
+Document: 1329
+FN (barley PSI-K,198478,198490)
+FN (PSI-K sequence from Synechococcus vulcanus,198519,198561)
+
+Document: 1966
+FN (TAR,302651,302654)
+FN (U6-P),302709,302714)
+
+Document: 1150
+FP (CCAAT/enhancer-binding protein isoforms beta,169307,169351)
+FN (CCAAT/enhancer-binding protein isoforms beta and delta,169307,169361)
+
+Document: 172
+FP (Shc tyrosine phosphorylation sites,26931,26965)
+FN (Shc,26931,26934)
+
+Document: 1778
+FN (LEM module,272227,272237)
+FN (emerin,272313,272319)
+
+Document: 459
+FP (NT123-2,70545,70552)
+FP (NT124-3,70651,70658)
+
+Document: 432
+FP (Alu,65899,65902)
+FP (B1-Alu transcripts,66022,66040)
+FN (Alu class III,65899,65912)
+FN (B1-Alu,66022,66028)
+
+Document: 468
+FP (tnaC,72138,72142)
+FN (tnaC stop codon,72138,72153)
+
+Document: 127
+FN (PAI,20191,20194)
+
+Document: 199
+FP (transcription factor NF-kappaB.,30569,30600)
+FN (NF-kappaB.,30590,30600)
+
+Document: 217
+FN (interferon-alpha/beta-stimulated,33145,33177)
+FN (myeloid cell nuclear differentiation antigen,33302,33346)
+
+Document: 1769
+FP (cdc17/pol1 mutants,270850,270868)
+FN (cdc17/pol1,270850,270860)
+
+Document: 683
+FN (pre-super-pro-PrB,103840,103857)
+
+Document: 1401
+FP (SRP)-SRP receptor,210959,210976)
+FN (signal recognition particle,210929,210956)
+FN (SRP)-SRP,210959,210967)
+FN (receptor,210968,210976)
+FN (Srb,210979,210982)
+
+Document: 1168
+FN (prokaryotic RCR initiators,172282,172308)
+FN (parvoviral replicator proteins,172484,172514)
+
+Document: 764
+FN (14DM),116404,116409)
+FN (pGPD,116549,116553)
+
+Document: 1482
+FN (S61,223895,223898)
+FN (S29,223907,223910)
+FN (SL196,223920,223925)
+FN (SL126,223930,223935)
+FN (nrdB,223956,223960)
+
+Document: 423
+FP (SH3 domain-containing protein Grb2,64888,64922)
+FP (p85 subunit,64931,64942)
+FN (SH3 domain-containing protein,64888,64917)
+FN (Grb2,64918,64922)
+FN (p85,64931,64934)
+
+Document: 91
+FP (PII,14076,14079)
+
+Document: 1643
+FP (Stat6,251690,251695)
+FN (IL-4-inducible,251609,251623)
+FN (endogenous Stat6,251679,251695)
+FN (IL-4-stimulated,251722,251737)
+
+Document: 531
+FN (hydroxymethylpyrimidine kinase/thiamin-phosphate,82442,82490)
+FN (pyrophosphorylase,82491,82508)
+
+Document: 190
+FP (TGF-beta type II receptor,29340,29365)
+FP (TGF-beta,29508,29516)
+FP (type II receptor mRNA,29519,29540)
+FN (antisense TGF-beta type II receptor oligodeoxynucleotides ( 40 microM ),29330,29401)
+FN (TGF-beta , type II receptor mRNA,29508,29540)
+
+Document: 845
+FP (nitrate reductase,128353,128370)
+FN (nitrate reductase in tobacco,128353,128381)
+
+Document: 1715
+FP (ICIDH,263593,263598)
+
+Document: 1042
+FN (PP,152946,152948)
+
+Document: 1733
+FP (MAZE-II I,265264,265273)
+
+Document: 1392
+FN (UmuD'-UmuD',209369,209380)
+FN (UmuD-UmuD',209403,209413)
+
+Document: 396
+FN (HYL,60949,60952)
+
+Document: 55
+FP (PSA,8401,8404)
+FN (serum PSA,8395,8404)
+
+Document: 746
+FN (RME1-independent,113430,113446)
+
+Document: 1159
+FN (NFkB,171103,171107)
+
+Document: 818
+FP (ANF (pANF),124140,124150)
+FN (ANF,124140,124143)
+FN (PRC,124185,124188)
+
+Document: 486
+FN (myb-like repeat,75279,75294)
+FN (plant myb-related genes,75358,75381)
+
+Document: 145
+FP (rat7-1,22937,22943)
+
+Document: 1338
+FN (PPZ1,200354,200358)
+FN (PPZ2,200363,200367)
+
+Document: 1688
+FN (gene E75,259266,259274)
+
+Document: 1374
+FP (Cln/Cdc28 kinase,206163,206179)
+FN (SBF,206067,206070)
+FN (Cln/Cdc28,206163,206172)
+FN (SBF,206222,206225)
+
+Document: 1347
+FN (PE operons,202033,202043)
+
+Document: 1760
+FN (Sonic hedgehog,269292,269306)
+FN (Myf5,269341,269345)
+FN (Myf5 expression domain,269433,269455)
+
+Document: 1356
+FN (cyclins,203523,203530)
+
+Document: 1419
+FP (U14,214066,214069)
+FN (snoRNA U14,214059,214069)
+
+Document: 85
+FP (human protein,12786,12799)
+
+Document: 1592
+FP (L2-4.,242328,242333)
+
+Document: 1628
+FN (Sir proteins,248997,249009)
+
+Document: 1673
+FN (MyoD,256675,256679)
+FN (E3-deleted,256721,256731)
+
+Document: 1709
+FN (Sm-binding site,262758,262773)
+
+Document: 1682
+FP (E2F site-dependent,258139,258157)
+FN (E2F,258139,258142)
+
+Document: 623
+FN (CD25,94962,94966)
+FN (CD45RO,94998,95004)
+
+Document: 1377
+FN (Gi,206668,206670)
+
+Document: 722
+FP (recombinant tissue plasminogen activator,109165,109205)
+FN (tissue plasminogen activator,109177,109205)
+
+Document: 1036
+FP (lambda PGK-1,152220,152232)
+FN (PGK-1,152227,152232)
+
+Document: 40
+FP (mouse PKC-epsilon,6201,6218)
+FN (human and mouse PKC-epsilon,6191,6218)
+FN (caspase-3,6252,6261)
+
+Document: 354
+FN (alpha 2-adrenoceptor,54863,54883)
+
+Document: 1906
+FP (TNFalpha,293177,293185)
+FN (plasma TNFalpha,293170,293185)
+
+Document: 1108
+FP (EUK-8,162641,162646)
+
+Document: 49
+FN (Cdc28p-inhibitory,7556,7573)
+
+Document: 1915
+FN (m5,294975,294977)
+FN (m7,294980,294982)
+FN (m8,294989,294991)
+
+Document: 1574
+FN (ZNF74,239559,239564)
+
+Document: 1583
+FP (terminal oxidase,241301,241317)
+FN (PU.,241216,241219)
+FN (thiCOGE,241263,241270)
+FN (symbiotic terminal oxidase cbb3,241291,241322)
+
+Document: 471
+FP (mouse lactoferrin gene promoter,72629,72660)
+FN (lactoferrin,72635,72646)
+
+Document: 130
+FN (AHAS.,20501,20506)
+
+Document: 1332
+FP (-172/-148 element,199109,199126)
+
+Document: 1745
+FP (IENF,266972,266976)
+
+Document: 13
+FN (CIITA,2080,2085)
+FN (RFX5,2094,2098)
+
+Document: 1987
+FN (human splicing factor 2/alternative,306136,306171)
+FN (splicing factor,306172,306187)
+
+Document: 1960
+FN (Newcastle disease antibody,301911,301937)
+
+Document: 1305
+FP (p56lck possesses,194438,194454)
+FN (p56lck,194438,194444)
+
+Document: 632
+FP (GBR-12909,96329,96338)
+
+Document: 1395
+FN (human N-ras codon 61 sequence,209894,209923)
+
+Document: 148
+FN (SREBP/ADD1,23433,23443)
+
+Document: 157
+FP (immediate-early proteins,24924,24948)
+FP (bovine herpesvirus 1,24952,24972)
+FN (immediate-early proteins of bovine herpesvirus 1,24924,24972)
+
+Document: 1341
+FP (gamma-globin gene,200878,200895)
+FP (endogenous gamma-globin mRNA,200978,201006)
+FN (A gamma-globin,200876,200890)
+FN (A gamma*,200898,200906)
+FN (gamma-globin,200989,201001)
+
+Document: 1897
+FN (INCENP,291609,291615)
+
+Document: 776
+FP (human T cell receptor (TCR ) alpha gene,118656,118695)
+FN (T cell receptor (TCR ) alpha gene,118662,118695)
+
+Document: 1431
+FP (wild type rat LH/CG receptor (rLHR,215700,215734)
+FN (wild type rat LH/CG receptor,215700,215728)
+FN (rLHR-t631,215838,215847)
+FN (rLHR-t628,215854,215863)
+
+Document: 1090
+FP (LD50/30,160302,160309)
+
+Document: 31
+FN (CAD sequences of hamster and Squalus acanthias,4786,4832)
+
+Document: 785
+FN (Thyrotropin-induced,119807,119826)
+FN (ribosomal protein,119854,119871)
+
+Document: 103
+FP (D-glycerate dehydrogenase,16176,16201)
+FN (D-lactate and D-glycerate dehydrogenase,16162,16201)
+
+Document: 417
+FN (PPARalpha-interacting protein,63687,63716)
+
+Document: 76
+FP (iron-containing superoxide dismutase genes of Escherichia coli,11649,11711)
+FN (ferric uptake regulation,11542,11566)
+FN (fur,11569,11572)
+FN (superoxide dismutase genes of Escherichia coli,11665,11711)
+
+Document: 1404
+FN (Brd bristle loss phenotype,211461,211487)
+
+Document: 318
+FP (DSF,49063,49066)
+
+Document: 1413
+FP (HS transcription factor-1( HSF-1,213130,213162)
+FN (HS transcription factor-1(,213130,213156)
+FN (HSF-1,213157,213162)
+
+Document: 1072
+FP (EIB,157716,157719)
+
+Document: 1386
+FP (Rev-erbA alpha mRNA,208169,208188)
+FN (Rev-erbA,208169,208177)
+FN (alpha,208178,208183)
+
+Document: 1586
+FP (adhesion-perturbing monoclonal antibodies,241726,241767)
+
+Document: 1667
+FP (retinoic acid receptor,255682,255704)
+FN (PPAR,255536,255540)
+FN (9-cis retinoic acid receptor,255676,255704)
+
+Document: 1326
+FP (26S,197853,197856)
+FN (26S proteolytic complex,197853,197876)
+
+Document: 653
+FN (Y,99879,99880)
+
+Document: 312
+FP (G6Pase-chloramphenicol acetyltransferase,48030,48070)
+FN (G6Pase,48019,48025)
+FN (G6Pase-chloramphenicol,48030,48052)
+FN (acetyltransferase,48053,48070)
+
+Document: 7
+FN (Scleraxis,1226,1235)
+FN (aggrecan gene,1278,1291)
+
+Document: 734
+FP (EFIA cDNA,111730,111739)
+FP (human DNA binding proteins,111827,111853)
+FN (EFIA,111730,111734)
+
+Document: 1200
+FN (LAR,177644,177647)
+
+Document: 88
+FN (cGHR.,13452,13457)
+
+Document: 1613
+FN (bovine vacuolar proton pump,246323,246350)
+
+Document: 1622
+FN (Defensins,247965,247974)
+FN (human neutrophil peptides,247991,248016)
+
+Document: 940
+FP (serum NEFA,142747,142757)
+
+Document: 976
+FN (kinin,147422,147427)
+
+Document: 635
+FP (HIP,96840,96843)
+FP (HIP,96909,96912)
+
+Document: 608
+FP (ATPase/DNA helicase,92719,92738)
+FN (RAD5,92705,92709)
+FN (ATPase/DNA,92719,92729)
+FN (helicase,92730,92738)
+
+Document: 644
+FP (breakpoint cluster region gene product,98247,98285)
+FN (small GTPases,98381,98394)
+
+Document: 1362
+FN (c-fms protooncogene,204642,204661)
+
+Document: 1030
+FP (serum creatine kinase B isoenzyme,151536,151569)
+FN (creatine kinase B isoenzyme,151542,151569)
+
+Document: 725
+FP (cDNA-predicted avian TnIcardiac amino acid sequences,109547,109599)
+FP (protein kinase C target site,110228,110256)
+FN (avian TnIcardiac amino acid sequences,109562,109599)
+FN (protein kinase A,109709,109725)
+FN (TnI,109833,109836)
+FN (TnC)-binding,109951,109963)
+FN (TnIcardiac,110054,110064)
+FN (actin/TnC-binding , actomyosin-inhibitory , domain,110074,110124)
+FN (mammalian TnIcardiac sequences,110168,110198)
+FN (protein kinase C,110228,110244)
+FN (TnI,110296,110299)
+
+Document: 1945
+FN (UBA domains,299198,299209)
+
+Document: 1604
+FP (F0,244962,244964)
+
+Document: 1263
+FP (transcriptional factor p53,187665,187691)
+FN (p53,187688,187691)
+
+Document: 1676
+FP (IRper-1,257428,257435)
+FP (IRhsp-1,257484,257491)
+FP (IRper-5,257591,257598)
+
+Document: 276
+FP (ATF,42296,42299)
+FN (fibrinogen,42349,42359)
+
+Document: 1245
+FN (RNA polymerase II,184755,184772)
+
+Document: 1658
+FP (four-base deletion/two-base,253953,253980)
+FP (W118R,254077,254082)
+
+Document: 599
+FP (po,91107,91109)
+
+Document: 258
+FN (GDP-GTP exchangers,39618,39636)
+
+Document: 671
+FP (N11,102249,102252)
+
+Document: 267
+FN (SRF.,40707,40711)
+
+Document: 366
+FP (green fluorescent protein,56413,56438)
+FN (enhanced green fluorescent protein,56404,56438)
+
+Document: 1550
+FP (SH2 domain-containing proteins,235854,235884)
+FN (SH2,235854,235857)
+
+Document: 34
+FN (gltD,5374,5378)
+
+Document: 1254
+FN (lipid A monoclonal antibodies,186294,186323)
+
+Document: 1568
+FP (LOH),238901,238905)
+FN (DCC,238760,238763)
+FN (MCC,238772,238775)
+
+Document: 1640
+FP (cytoplasmic dynein heavy chain,251096,251126)
+FN (cytoplasmic dynein heavy chain of Neurospora crassa,251096,251147)
+
+Document: 1649
+FN (NFAT-dependent,252618,252632)
+FN (p300-dependent,252654,252668)
+
+Document: 662
+FN (EBNA-2-responsive,101051,101068)
+
+Document: 1882
+FN (RARalpha-specific,289393,289410)
+
+Document: 1855
+FN (AROM-p64,285037,285045)
+
+Document: 1864
+FN (histone,286708,286715)
+
+Document: 1209
+FN (p223,178656,178660)
+
+Document: 1595
+FP (WAIS-R factor,242972,242985)
+
+Document: 877
+FN (breakpoint cluster region,133239,133264)
+
+Document: 1631
+FN (OA,249408,249410)
+
+Document: 617
+FP (mitochondrial chaperonin HSP60,93969,93999)
+FN (Zea mays mitochondrial chaperonin,93960,93993)
+FN (HSP60,93994,93999)
+
+Document: 1837
+FP (E2F-3,281853,281858)
+FN (full-length E2F-3,281841,281858)
+FN (E2F-3B,281908,281914)
+
+Document: 689
+FP (G protein alpha subunit,104468,104491)
+FN (G protein alpha subunit from tomato,104468,104503)
+
+Document: 1508
+FP (GATA-1,227882,227888)
+FN (erythroid transcription factor GATA-1,227851,227888)
+
+Document: 1858
+FN (PDGF-BB,285543,285550)
+
+Document: 1544
+FP (egg antigen,234881,234892)
+FN (soluble egg antigen,234873,234892)
+FN (SEA,234895,234898)
+FN (precipitin,234920,234930)
+
+Document: 1212
+FP (PITSLRE PK genes,178946,178962)
+FP (FISH),179045,179050)
+FN (PITSLRE PK genes in chickens,178946,178974)
+
+Document: 530
+FP (VIP-induced PRL gene,82362,82382)
+FN (VIP-induced,82362,82373)
+FN (PRL gene,82374,82382)
+
+Document: 189
+FP (SYT-SSX proteins,29278,29294)
+FN (green fluorescent protein,29202,29227)
+FN (SYT-SSX,29278,29285)
+
+Document: 1625
+FP (RAS-cyclic AMP-dependent protein kinase,248355,248394)
+FN (RAS-cyclic,248355,248365)
+FN (AMP-dependent protein kinase,248366,248394)
+FN (IREu,248437,248441)
+
+Document: 1284
+FN (GPHe( P2 ),190949,190959)
+
+Document: 225
+FP (enzyme-type C4 plants,34761,34782)
+FN (enzyme-type,34761,34772)
+
+Document: 1831
+FN (ETn,280935,280938)
+FN (early transposon,280941,280957)
+
+Document: 1490
+FP (POU-homeodomain protein GHF-1/Pit-1,224982,225017)
+FP (pituitary-specific gene,225032,225055)
+FN (POU-homeodomain protein,224982,225005)
+FN (GHF-1/Pit-1,225006,225017)
+
+Document: 1840
+FN (herpes simplex viral protein VP16,282428,282461)
+
+Document: 1571
+FN (Trx-CT,239237,239243)
+
+Document: 512
+FN (TAM-67,79482,79488)
+FN (AdoMetDC-antisense expressors,79520,79549)
+
+Document: 180
+FN (Y1,28080,28082)
+
+Document: 1786
+FN (HLA-A*0201-restricted,273532,273553)
+FN (gp100-derived,273556,273569)
+
+Document: 1822
+FN (hPL-B enhancer,279528,279542)
+FN (NF-IL-6-dependent,279549,279566)
+
+Document: 1795
+FP (MVMi capsid,275168,275179)
+
+Document: 674
+FP (extracellular matrix glycoprotein undulin,102600,102641)
+FN (undulin,102634,102641)
+
+Document: 1149
+FP (M1 domain,169207,169216)
+FN (LHR-expressing,169220,169234)
+
+Document: 1
+FP (mck enhancer,371,383)
+FN (mlc-1/3 enhancer,260,276)
+FN (mck,371,374)
+
+Document: 207
+FP (DSIP,31709,31713)
+
+Document: 324
+FP (non-RTKs and 2 serine/threonine kinases,49608,49647)
+FN (RTKs,49571,49575)
+FN (serine/threonine kinases,49623,49647)
+
+Document: 638
+FP (murine pre-mRNA,97379,97394)
+
+Document: 297
+FP (cathepsin S,45511,45522)
+FN (mature cathepsin S,45504,45522)
+
+Document: 1176
+FN (Ash-m and -s,173567,173579)
+FN (Ash-l,173622,173627)
+
+Document: 1930
+FP (EcoRI fragment,297404,297418)
+FN (438 bp EcoRI fragment,297397,297418)
+
+Document: 1526
+FN (chloroplastic GAPDHs,231523,231543)
+
+Document: 844
+FP (HLP.,128151,128155)
+
+Document: 1598
+FP (CCE1 homologue YDC2,243527,243546)
+FN (CCE1,243527,243531)
+FN (YDC2,243542,243546)
+
+Document: 1257
+FP (anti-CBP,186852,186860)
+FN (anti-CBP antiserum,186852,186870)
+
+Document: 611
+FP (MAP kinase activator/MAP kinase,93204,93235)
+FN (MAP kinase activator/MAP,93204,93228)
+FN (kinase,93229,93235)
+
+Document: 270
+FN (NP,41386,41388)
+FN (cat,41439,41442)
+FN (wild-type PB2,41521,41534)
+
+Document: 279
+FN (ADNP,42960,42964)
+
+Document: 1804
+FP (CDK,277004,277007)
+FN (Cdc2aAt,276972,276979)
+FN (CDK from Arabidopsis,277004,277024)
+FN (Cdc2bAt,277027,277034)
+
+Document: 351
+FN (psbH,54276,54280)
+
+Document: 1472
+FP (PSA,222392,222395)
+FN (seminal plasma PSA,222377,222395)
+
+Document: 19
+FN (Deformed,2751,2759)
+
+Document: 1885
+FP (alpha-1,289940,289947)
+
+Document: 1167
+FP (BamHI G fragment,172068,172084)
+FN (HHV-6A( U1102 ) genomic BamHI G fragment,172044,172084)
+
+Document: 1239
+FP (plasma AVP,183743,183753)
+FN (AVP,183750,183753)
+FN (NPY,183826,183829)
+
+Document: 1248
+FP (TxA2,185266,185270)
+FP (TxA2,185459,185463)
+
+Document: 566
+FP (Platelet serotonin (5-HT),87059,87084)
+FN (5-HT releasing factor,87089,87110)
+
+Document: 1221
+FN (Grf10-Swi5-DNA,180916,180930)
+FN (Swi5,181007,181011)
+FN (Grf10,181015,181020)
+
+Document: 880
+FN (eIF-4A,133610,133616)
+
+Document: 602
+FP (immunoglobulin light - and heavy-chain genes,91431,91475)
+FN (immunoglobulin light - and heavy-chain,91431,91469)
+
+Document: 1230
+FN (endogenous RNA polymerase,182626,182651)
+
+Document: 234
+FP (G3 enhancer-like element,36337,36361)
+
+Document: 647
+FN (wild-type E10 fragment,98863,98885)
+
+Document: 1867
+FP (distB,286944,286949)
+FN (ABI3,287020,287024)
+FN (ABI3-dependent,287029,287043)
+FN (ABI3,287198,287202)
+
+Document: 1777
+FN (cot oncoprotein,272025,272040)
+
+Document: 282
+FP (G alpha t,43432,43441)
+FN (cone G alpha t,43427,43441)
+
+Document: 1152
+FP (Rho inhibitor C3 transferase,170011,170039)
+FN (Rho,170011,170014)
+FN (C3 transferase,170025,170039)
+
+Document: 1502
+FN (mRNP3+4,226827,226834)
+
+Document: 820
+FP (chloramphenicol acetyltransferase gene,124821,124859)
+FN (chloramphenicol acetyltransferase gene coding sequence,124821,124875)
+
+Document: 1888
+FP (microtubule binding domain,290401,290427)
+FN (MACF),290471,290476)
+
+Document: 1170
+FP (carnitine palmitoyltransferase,172670,172700)
+FP (0.12 nmol/min/mg protein,172743,172767)
+FN (carnitine palmitoyltransferase ( CPT ) I and II,172670,172717)
+
+Document: 174
+FN (full-length mSin3,27232,27249)
+
+Document: 147
+FP (NF-kappaB-dependent reporter gene,23173,23206)
+FP (E1B 19-kDa protein,23277,23295)
+FN (NF-kappaB-dependent,23173,23192)
+FN (E1B 19-kDa protein ( 19K),23277,23302)
+
+Document: 183
+FN (yeast KAR2,28439,28449)
+FN (BiP),28452,28456)
+FN (mammalian GRP78,28459,28474)
+FN (BiP),28477,28481)
+FN (GRP94,28488,28493)
+
+Document: 901
+FP (PBK),136510,136514)
+
+Document: 569
+FP (spinal fluid gamma globulin,87405,87432)
+FN (gamma globulin,87418,87432)
+
+Document: 228
+FP (Env mutants,35191,35202)
+FN (SIV Env,35139,35146)
+FN (SIV Env mutants,35187,35202)
+
+Document: 1798
+FN (GCSh,275875,275879)
+
+Document: 1457
+FN (OxyR-C199S,219642,219652)
+FN (Pmom,219663,219667)
+FN (reduced wild-type OxyR,219755,219777)
+
+Document: 461
+FP (plasma hormone,70978,70992)
+FP (D-norgestrel,71028,71040)
+FP (17alpha,71045,71052)
+
+Document: 1116
+FP (Max,163824,163827)
+FP (c-Myc,163832,163837)
+FN (synthetic Max,163814,163827)
+FN (c-Myc leucine zippers,163832,163853)
+
+Document: 775
+FP (N-myristoylated protein,118598,118621)
+
+Document: 1556
+FN (low-molecular-weight GTP/GDP-binding proteins,236711,236756)
+
+Document: 1870
+FP (PP2A,287663,287667)
+FN (PP2A trimeric and dimeric complexes,287663,287698)
+
+Document: 811
+FN (PKI(1-31 ),123337,123347)
+
+Document: 1125
+FP (CAS 73334-07-3,165336,165350)
+
+Document: 1466
+FP (EB,221308,221310)
+
+Document: 129
+FN (M. aeolicus ilvB,20447,20463)
+
+Document: 784
+FN (endoglycosidase,119697,119712)
+
+Document: 1879
+FP (,dyn ref,288832,288840)
+
+Document: 1565
+FP (SV40 mutants,238002,238014)
+FN (T antigens,237974,237984)
+
+Document: 1538
+FN (palgD,233560,233565)
+
+Document: 452
+FN (coagulase-negative,69111,69129)
+
+Document: 138
+FP (calcium-vitamin D endocrine,21903,21930)
+
+Document: 210
+FN (mouse Reg,32372,32381)
+FN (regenerating gene product,32384,32409)
+
+Document: 219
+FP (CSTi-2,33670,33676)
+FP (CSTi-1,33708,33714)
+
+Document: 291
+FN (FAD-dependent glucose methanol choline oxidoreductases,44439,44493)
+FN (alcohol oxidases,44562,44578)
+
+Document: 1780
+FP (dominant-negative mutant receptor,272590,272623)
+FP (wild-type PPARgamma,272635,272654)
+FN (PPARgamma,272645,272654)
+
+Document: 1439
+FN (RIC3,216980,216984)
+
+Document: 1852
+FP (-dependent GH-induced MAP kinase,284427,284459)
+FP (GH-induced MAP kinase,284576,284597)
+FN (IRS-1-independent,284405,284422)
+FN (GH-induced,284438,284448)
+FN (MAP kinase,284449,284459)
+FN (GH-induced,284576,284586)
+FN (MAP kinase,284587,284597)
+
+Document: 1825
+FP (AoP,280023,280026)
+
+Document: 1861
+FN (dominant negative Smad2,286078,286101)
+
+Document: 1520
+FP (MUPs,230332,230336)
+
+Document: 120
+FP (IGF-1R promoter,19000,19015)
+FN (IGF-1R promoter reporter constructs,19000,19035)
+
+Document: 515
+FP (D.F.,79987,79991)
+
+Document: 1394
+FN (thrombin-stimulated,209737,209756)
+
+Document: 1807
+FP (Sec31A co-precipitate Sec13,277358,277385)
+FP (G protein,277462,277471)
+FN (Sec31A,277358,277364)
+FN (Sec13,277380,277385)
+FN (stomatitis G protein,277451,277471)
+
+Document: 1475
+FP (SP1,222850,222853)
+FN (transcription factor SP1,222829,222853)
+
+Document: 1484
+FP (esterase,224280,224288)
+FN (neuropathy target esterase,224262,224288)
+
+Document: 1215
+FP (Sec1p,180006,180011)
+FN (Caenorhabditis elegans unc18,179946,179974)
+FN (Saccharomyces cerevisiae Sec1p,179981,180011)
+
+Document: 1771
+FN (mSTI1,271061,271066)
+FN (hsp90,271082,271087)
+
+Document: 246
+FP (Kerstin,38257,38264)
+
+Document: 201
+FP (WI-10614,30700,30708)
+FN (markers WI-10614,30692,30708)
+FN (D12S2293,30720,30728)
+
+Document: 919
+FP (insulin,139115,139122)
+FN (serum insulin,139109,139122)
+
+Document: 60
+FN (progesterone receptor-mediated,9084,9114)
+
+Document: 1666
+FN (NF-AT4,255379,255385)
+
+Document: 1675
+FP (HTLV-I) trans-activator,257035,257058)
+FN (basic-domain/leucine-zipper ( bZip ) protein,257099,257143)
+FN (CREB),257186,257191)
+FN (viral Tax-responsive element,257207,257235)
+
+Document: 1343
+FN (TnI-CAT,201109,201116)
+
+Document: 213
+FP (NS1,32641,32644)
+FN (Minute virus of mice NS1,32620,32644)
+
+Document: 222
+FN (SRB8,34012,34016)
+
+Document: 1971
+FP (telomerase RNA-protein,303295,303317)
+FN (telomerase RNA-protein complex,303295,303325)
+
+Document: 437
+FN (corticotropin-releasing factor,66525,66555)
+FN (CRF,66563,66566)
+
+Document: 1191
+FP (guanylyl cyclase receptors,175889,175915)
+FN (plasma membrane family of guanylyl cyclase receptors,175863,175915)
+
+Document: 509
+FN (Toxoplasma gondii antibody,79097,79123)
+
+Document: 518
+FN (beta 2-M,80771,80779)
+
+Document: 724
+FN (LPL),109405,109409)
+
+Document: 383
+FN (Growth hormone,59237,59251)
+
+Document: 1819
+FN (Ha-ras codon 12,279030,279045)
+
+Document: 1451
+FP (serine 242,218641,218651)
+
+Document: 1146
+FP (orfX-fliP locus,168699,168714)
+FN (class II flagellar genes,168657,168681)
+
+Document: 500
+FP (MDR1,77634,77638)
+FN (human multidrug resistance ( MDR1 ) gene,77605,77645)
+FN (P-glycoproteins,77660,77675)
+
+Document: 132
+FP (Hop( T42,20919,20927)
+FP (E695K),21006,21012)
+FN (Hop( T42 ),20919,20929)
+
+Document: 141
+FN (an3-W138A,22218,22227)
+
+Document: 1693
+FP (CBP)/p300 coactivator,260214,260235)
+FN (CBP)/p300,260214,260223)
+FN (coactivator,260224,260235)
+
+Document: 1774
+FN (Nodal,271655,271660)
+
+Document: 1747
+FP (HNF-3/fork head homolog-11B protein ( HFH-11B,267341,267386)
+FN (HNF-3/fork,267341,267351)
+FN (head homolog-11B,267352,267368)
+FN (HFH-11B,267379,267386)
+FN (Trident,267403,267410)
+FN (Win,267415,267418)
+FN (winged helix/fork,267447,267464)
+FN (head,267465,267469)
+
+Document: 1406
+FN (Mef-2C.,211858,211865)
+FN (mMIWC,211982,211987)
+
+Document: 1128
+FN (human anti-La sera,165920,165938)
+
+Document: 105
+FP (LAM,16615,16618)
+
+Document: 419
+FN (serine and aspartyl proteinases,64426,64457)
+
+Document: 769
+FN (ret1-1,117546,117552)
+FN (RET1,117644,117648)
+
+Document: 527
+FP (ER,82041,82043)
+
+Document: 1182
+FN (SRY-related cDNA,174415,174431)
+FN (high-mobility-group,174458,174477)
+FN (HMG),174480,174484)
+
+Document: 841
+FN (HLA-B,127700,127705)
+
+Document: 1989
+FP (ACEI,306304,306308)
+
+Document: 195
+FP (M-1,30154,30157)
+FP (M-1,30232,30235)
+FN (netropsin,30166,30175)
+
+Document: 204
+FP (MAP kinase kinase kinase MLK2,31207,31236)
+FP (kinesin superfamily motor KIF3,31308,31338)
+FN (MAP kinase kinase kinase,31207,31231)
+FN (MLK2,31232,31236)
+FN (kinesin superfamily,31308,31327)
+FN (KIF3,31334,31338)
+
+Document: 1738
+FP (body insulin,266409,266421)
+FN (insulin,266414,266421)
+
+Document: 742
+FP (alpha 4 gene 5' flanking region,113075,113106)
+FN (alpha 4 gene,113075,113087)
+
+Document: 751
+FP (AP-4 HLH motif,114094,114108)
+FN (AP-4,114094,114098)
+
+Document: 410
+FN (cAMP-PDE polyclonal antibodies,62770,62800)
+FN (PDE,62822,62825)
+
+Document: 1164
+FN (S. griseus proteases A , B , and C.,171479,171514)
+FN (meAda,171526,171531)
+FN (aidB,171644,171648)
+FN (meAda,171681,171686)
+
+Document: 697
+FP (Periplaneta,105493,105504)
+
+Document: 231
+FP (HLA antigen,35940,35951)
+FN (HLA,35940,35943)
+
+Document: 1801
+FP (Inhibitor-1 (I-1,276441,276457)
+FP (inhibitor-2 (I-2,276464,276480)
+FN (Inhibitor-1,276441,276452)
+FN (inhibitor-2,276464,276475)
+
+Document: 1460
+FP (ICE/Ced-3 proteases,220211,220230)
+FP (ICE/Ced-3 protease,220320,220338)
+FN (ICE/Ced-3,220211,220220)
+FN (CPP32,220306,220311)
+FN (ICE/Ced-3,220320,220329)
+FN (CPP32,220359,220364)
+
+Document: 1119
+FN (hepatitis C virus ( HCV ) antibodies,164421,164457)
+
+Document: 332
+FP (competitive NMDA receptor,50965,50990)
+FN (NMDA receptor,50977,50990)
+
+Document: 745
+FN (ATG2,113420,113424)
+
+Document: 404
+FN (Net,61991,61994)
+
+Document: 90
+FP (purified proteins,13857,13874)
+
+Document: 1956
+FP (tumor necrosis factor,300967,300988)
+FP (TNF)-alpha,300991,301001)
+FP (protein-2,301103,301112)
+FN (tumor necrosis factor ( TNF)-alpha,300967,301001)
+FN (macrophage inflammatory protein-2,301079,301112)
+
+Document: 1938
+FP (DNA repair proteins,298564,298583)
+
+Document: 1624
+FP (fibronectin,248276,248287)
+FN (foetal fibronectin,248269,248287)
+
+Document: 1633
+FN (alpha2-antiplasmin,249796,249814)
+
+Document: 1705
+FP (Asp10,262303,262308)
+
+Document: 1364
+FP (productive gamma gene,205000,205021)
+
+Document: 1400
+FP (mouse promoter P3,210845,210862)
+
+Document: 1373
+FN (Hb,206009,206011)
+
+Document: 1382
+FP (calmodulin binding site,207322,207345)
+FN (Spc110p,207290,207297)
+FN (calmodulin,207322,207332)
+
+Document: 1920
+FP (alpha-2,295860,295867)
+FN (CD86,295998,296002)
+
+Document: 1696
+FP (Wee1,260742,260746)
+FN (Cdr2,260685,260689)
+FN (N-terminal regulatory domain of Wee1,260710,260746)
+
+Document: 341
+FN (alpha 4- and alpha 27-TK,52592,52616)
+
+Document: 1651
+FN (pituitary-derived growth hormone,252870,252902)
+
+Document: 1319
+FP (peptide/DR,196775,196785)
+FN (peptide/DR complexes,196775,196795)
+
+Document: 1050
+FP (E2-17 beta,154023,154033)
+
+Document: 1391
+FP (lactate dehydrogenase,209206,209227)
+FN (serum lactate dehydrogenase,209200,209227)
+
+Document: 718
+FP (MLP.,108501,108505)
+
+Document: 1131
+FN (rHb1.1,166203,166209)
+
+Document: 72
+FP (IR42,10930,10934)
+
+Document: 144
+FN (tail genes,22680,22690)
+FN (R,22693,22694)
+FN (S,22699,22700)
+FN (S,22816,22817)
+FN (V,22822,22823)
+
+Document: 1687
+FP (G nucleotide,259032,259044)
+FP (HPRT,259091,259095)
+FN (HPRT exon 3,259091,259102)
+
+Document: 673
+FP (human pim-1 cDNA,102386,102402)
+FP (glutathione S-transferase,102518,102543)
+FN (full-length human pim-1 cDNA,102374,102402)
+FN (bacterial glutathione S-transferase,102508,102543)
+
+Document: 1113
+FN (POMC products,163258,163271)
+
+Document: 709
+FP (R2,107110,107112)
+FN (PHA,107197,107200)
+
+Document: 368
+FN (RSV LTR-enhanced,56660,56676)
+
+Document: 27
+FN (Sox8,3883,3887)
+
+Document: 754
+FP (4.8-kilobase BamHI-HindII I fragment,114580,114616)
+FP (Neurospora crassa CuZn superoxide dismutase gene,114637,114685)
+FN (BamHI-HindII,114593,114605)
+FN (I,114606,114607)
+FN (entire Neurospora crassa CuZn superoxide dismutase gene,114630,114685)
+
+Document: 476
+FN (ET,73678,73680)
+
+Document: 449
+FP (cyclin D2 except exon 5,68605,68628)
+FN (cyclin D2,68605,68614)
+
+Document: 135
+FN (amino-terminal gag-encoded region,21361,21394)
+
+Document: 108
+FP (T+,17166,17168)
+
+Document: 458
+FP (nuclear binding protein,70369,70392)
+FN (undefined 1,69939,69950)
+FN (ken gene,70028,70036)
+FN (Kruppel-like putative transcription factor,70052,70094)
+FN (mammalian mitochondrial trifunctional enzyme,70123,70167)
+FN (TAR DNA-binding protein-43,70191,70217)
+FN (TBPH),70220,70225)
+FN (TM4SF,70296,70301)
+FN (maleless,70424,70432)
+FN (Copia-like element,70441,70459)
+
+Document: 1328
+FN (AP-1-like sequences,198408,198427)
+
+Document: 1642
+FN (alpha 2AP,251514,251523)
+FN (protein C,251528,251537)
+
+Document: 664
+FN (cgs 1+,101532,101538)
+FN (cgs 2+,101543,101549)
+
+Document: 1759
+FP (22 kDa zein gene promoters,269229,269255)
+FN (O2,269144,269146)
+FN (O2 box,269219,269225)
+FN (zein,269236,269240)
+
+Document: 1418
+FP (DSF,213857,213860)
+
+Document: 362
+FN (metaxin,55939,55946)
+
+Document: 1995
+FN (caspase-dependent,307050,307067)
+
+Document: 1250
+FP (DGR,185892,185895)
+
+Document: 909
+FP (Thr286,137795,137801)
+
+Document: 1672
+FP (phytochrome-deficient mutants,256396,256425)
+FN (phytochrome-deficient,256396,256417)
+FN (hy2,256426,256429)
+FN (fre1-1(phyA-201,256449,256464)
+FN (shy2-1D single mutant,256630,256651)
+
+Document: 3
+FN (E2A-HLF-mediated,469,485)
+
+Document: 1537
+FN (SRF),233368,233372)
+
+Document: 434
+FP (L component,66274,66285)
+
+Document: 93
+FP (GATA mutant,14405,14416)
+FP (-100 CCACC mutant,14516,14533)
+
+Document: 1627
+FP (rat androgen-binding protein gene,248954,248987)
+FN (androgen-binding protein,248958,248982)
+
+Document: 1313
+FN (ATP-binding proteins,195708,195728)
+
+Document: 326
+FP (wild-type Repeat 2 + 3 sequence,49747,49778)
+
+Document: 640
+FN (ts8,97679,97682)
+FN (Rif domain,97737,97747)
+
+Document: 1062
+FP (table IX,155958,155966)
+
+Document: 380
+FN (POL/Zn site,58728,58739)
+
+Document: 1869
+FP (CHL,287571,287574)
+
+Document: 416
+FP (ABF1 site,63571,63580)
+FP (ILV1 REB1 site,63658,63672)
+FN (mutated ABF1 site,63563,63580)
+FN (ILV1,63658,63662)
+FN (REB1 site,63663,63672)
+
+Document: 730
+FN (casein,111250,111256)
+
+Document: 1914
+FP (NRK,294741,294744)
+FN (vesicular stomatitis virus glycoprotein,294672,294711)
+
+Document: 1609
+FN (C3G,245764,245767)
+
+Document: 1923
+FP (growth-related nuclear protein,296413,296443)
+FP (rat aldolase B gene promoter,296463,296491)
+FN (aldolase B gene,296467,296482)
+
+Document: 1582
+FP (lysozyme FEF site,241175,241192)
+FN (lysozyme,241175,241183)
+FN (FEF,241184,241187)
+
+Document: 622
+FP (Y-1,94773,94776)
+FP (Y-2,94779,94782)
+FP (Y-3,94785,94788)
+FP (Y-5,94795,94798)
+
+Document: 1277
+FN (DtxR,189806,189810)
+FN (tox operator,189888,189900)
+
+Document: 1690
+FP (ribosomal protein S7.,259408,259429)
+FN (S7.,259426,259429)
+
+Document: 604
+FP (hap3 mutations,91824,91838)
+FN (hap3,91824,91828)
+
+Document: 30
+FP (Web,4672,4675)
+
+Document: 1896
+FP (SAF-A,291432,291437)
+FP (MARs,291482,291486)
+FN (murine homologue of SAF-A,291412,291437)
+FN (satMa-binding,291514,291527)
+
+Document: 1932
+FN (Nrf2,297842,297846)
+
+Document: 39
+FP (IgE ) antibody,6004,6018)
+FN (IgE,6004,6007)
+FN (ovalbumin,6095,6104)
+FN (OA,6107,6109)
+
+Document: 1905
+FN (p16.7,293015,293020)
+FN (gene 16.7,293076,293085)
+
+Document: 1591
+FP (C1-7,242312,242316)
+FP (T1-9,242319,242323)
+
+Document: 1223
+FN (RARs,181332,181336)
+FN (RAR responsive element,181431,181453)
+
+Document: 1573
+FN (HET,239519,239522)
+
+Document: 1986
+FP (Sp1 binding sites,305904,305921)
+FP (mrp2 gene,305978,305987)
+FN (Sp1,305904,305907)
+FN (rat mrp2 gene,305974,305987)
+
+Document: 1887
+FP (mammalian proteins,290196,290214)
+FN (gp31,290277,290281)
+
+Document: 1860
+FP (LysR family,286008,286019)
+FN (LysR family of transcriptional regulators,286008,286049)
+FN (LTTRs,286052,286057)
+
+Document: 1546
+FN (FOG,235070,235073)
+
+Document: 1555
+FN (sop mutants,236651,236662)
+
+Document: 398
+FP (MAP kinase specific phosphatase MKP3/PYST1,61376,61418)
+FN (MAP kinase,61376,61386)
+FN (MKP3/PYST1,61408,61418)
+
+Document: 1367
+FN (human gp39 promoter,205463,205482)
+
+Document: 1376
+FN (CDKN2D/INK4d,206491,206503)
+
+Document: 1881
+FP (Rb tumor suppressor,289182,289201)
+FN (Rb,289182,289184)
+
+Document: 1540
+FN (serpins,233958,233965)
+FN (Bcl-2-like molecules,234013,234033)
+FN (gene 16,234072,234079)
+
+Document: 1890
+FN (P2Y( 11 ) mRNA,290623,290637)
+
+Document: 1549
+FN (recombination-activating gene,235530,235559)
+FN (Ddelta3,235620,235627)
+
+Document: 1621
+FN (MvaT,247842,247846)
+
+Document: 903
+FP (inulin,136910,136916)
+
+Document: 1495
+FP (SSTEs,225709,225714)
+
+Document: 1199
+FP (mammalian glycosylasparaginase,177282,177312)
+FN (glycosylasparaginase,177254,177274)
+FN (glycosylasparaginase,177292,177312)
+
+Document: 24
+FP (RbcS2: :aadA ::RbcS2 gene( s ),3345,3375)
+FN (RbcS2:,3345,3351)
+FN (gene( s ),3366,3375)
+
+Document: 688
+FN (major 49-kDa core protein,104256,104281)
+FN (HSPG,104295,104299)
+FN (fibroglycan,104407,104418)
+
+Document: 33
+FN (scERV2,5025,5031)
+
+Document: 6
+FN (pre-hCG,1208,1215)
+
+Document: 1567
+FP (SH2 ) domain-containing protein-tyrosine phosphatase,238340,238392)
+FP (PECAM-1 encompassing tyrosine residues Tyr-663,238638,238684)
+FP (Tyr-686,238688,238695)
+FN (SH2,238340,238343)
+FN (protein-tyrosine phosphatase,238364,238392)
+FN (PECAM-1,238638,238645)
+
+Document: 1639
+FN (CD34,250946,250950)
+
+Document: 1235
+FN (Rat kidney carboxylesterase,183439,183466)
+
+Document: 553
+FP (f2/f1,85394,85399)
+FP (L1,85425,85427)
+FP (L2,85430,85432)
+
+Document: 1648
+FN (Botox,252545,252550)
+
+Document: 652
+FN (CKI2,99809,99813)
+
+Document: 661
+FN (attenuator 1,100813,100825)
+FN (attenuator 2,100930,100942)
+
+Document: 634
+FN (KLH,96654,96657)
+
+Document: 329
+FP (Calpha,50646,50652)
+FP (RIIbeta subunit,50657,50672)
+
+Document: 302
+FP (GIY-YIG ORF,46150,46161)
+FP (LAGLI-DADG-GIY-YIG ORF,46184,46206)
+FN (GIY-YIG,46150,46157)
+FN (LAGLI-DADG-GIY-YIG,46184,46202)
+
+Document: 1854
+FN (Fcp1p-binding,284775,284788)
+
+Document: 1863
+FP (ARM1,286521,286525)
+FN (SU(S ),286578,286584)
+
+Document: 1935
+FP (S1 transmembrane domain,298124,298147)
+FP (S0-S1 linker longer,298210,298229)
+FN (SV1,298086,298089)
+
+Document: 1190
+FP (nM IGF II,175719,175728)
+FN (IGF II,175722,175728)
+
+Document: 1944
+FN (wt-ITAM,299100,299107)
+FN (IIA-ITAM,299111,299119)
+FN (PI 3-kinase-dependent,299147,299168)
+
+Document: 1603
+FP (Drosophila melanogaster human Sp1,244690,244723)
+FN (human Sp1,244714,244723)
+
+Document: 1262
+FN (TR.,187489,187492)
+
+Document: 203
+FP (capnostat,31068,31077)
+FP (oxystat,31082,31089)
+FN (PRL.,30897,30901)
+
+Document: 212
+FP (Bilirubin,32551,32560)
+
+Document: 930
+FP (trap AIB,141486,141494)
+
+Document: 1271
+FP (DEAH protein Prp16,188833,188851)
+FN (DEAH protein,188833,188845)
+FN (Prp16,188846,188851)
+
+Document: 293
+FP (nitroglycerin (NTG),44864,44883)
+
+Document: 1504
+FN (LRR domain,227106,227116)
+FN (Acan125,227145,227152)
+
+Document: 1818
+FN (Xwnt-8,278900,278906)
+
+Document: 1926
+FP (beta subunit gene,296873,296890)
+FP (GlyR alpha subunit genes,296939,296963)
+FN (homologous GlyR alpha subunit genes,296928,296963)
+
+Document: 1558
+FN (Igf2r,237085,237090)
+
+Document: 526
+FN (phytase,81811,81818)
+
+Document: 607
+FP (IgG,92411,92414)
+FP (IV-C1 of CDC ),92600,92614)
+FN (IgG antibodies,92411,92425)
+
+Document: 921
+FN (LexA.,139471,139476)
+
+Document: 239
+FN (GPR37,37209,37214)
+
+Document: 1800
+FN (MyoD-dependent,276357,276371)
+FN (MyoD-binding,276400,276412)
+FN (KIX domain,276420,276430)
+
+Document: 1809
+FP (pituitary vasopressin V1b receptors,277672,277707)
+FN (vasopressin V1b receptors,277682,277707)
+FN (pituitary adrenocorticotropic hormone,277744,277781)
+
+Document: 628
+FN (IgG2,95634,95638)
+FN (IgG3,95641,95645)
+FN (IgG4,95648,95652)
+
+Document: 1839
+FN (Gtx-binding sequence,282209,282229)
+
+Document: 1848
+FP (oas gene family encoding O-acetylserine,283504,283543)
+FN (oas gene family,283504,283519)
+FN (O-acetylserine ( thiol ) lyases,283529,283560)
+
+Document: 511
+FP (beta -MyHC gene (-5518,79250,79272)
+FN (beta -MyHC gene,79250,79265)
+
+Document: 1166
+FP (MPS1,171843,171847)
+FN (MPS1 open reading frame,171843,171866)
+
+Document: 1579
+FN (Fis protein,240666,240677)
+FN (DNA invertases,240741,240755)
+
+Document: 152
+FP (Ca-45,24266,24271)
+
+Document: 1274
+FP (serum gamma-glutamyl transferase,189188,189220)
+FN (gamma-glutamyl transferase,189194,189220)
+
+Document: 188
+FP (Tat,29120,29123)
+FN (HIV-1 Tat,29114,29123)
+
+Document: 502
+FP (beta 1-AR-luciferase reporter recombinants,77898,77940)
+FN (beta 1-AR-luciferase,77898,77918)
+FN (beta 1-AR,77988,77997)
+
+Document: 610
+FN (sms,93030,93033)
+
+Document: 1480
+FN (MSRs,223625,223629)
+
+Document: 1830
+FP (CA,280783,280785)
+
+Document: 1489
+FP (activator SF-1,224865,224879)
+FN (SF-1,224875,224879)
+FN (COUP-TF,224898,224905)
+
+Document: 1803
+FP (CRS,276770,276773)
+
+Document: 807
+FP (CSF,122761,122764)
+FN (CSF AP,122761,122767)
+
+Document: 1462
+FN (Escherichia coli tet-repressor,220555,220585)
+
+Document: 1875
+FN (HSL translation start site,288366,288392)
+
+Document: 816
+FP (IL2R alpha promoter constructs,123757,123787)
+FN (mutated IL2R alpha promoter constructs,123749,123787)
+
+Document: 1157
+FN (PDGFR.,170650,170656)
+
+Document: 1471
+FP (factor-induced,222146,222160)
+
+Document: 1229
+FP (CSF),182570,182574)
+
+Document: 1857
+FN (FGF1,285323,285327)
+
+Document: 1112
+FP (transcription factor Pit-1,163073,163099)
+FN (Pit-1,163094,163099)
+
+Document: 1525
+FP (PyrR,231306,231310)
+FN (Thermus PyrR,231285,231297)
+FN (PyrR attenuation proteins,231306,231331)
+
+Document: 466
+FN (C1q,71806,71809)
+
+Document: 1184
+FP (TRE-LAP.,174879,174887)
+FP (27-base element,174892,174907)
+FP (PDGF-activated serine/threonine phosphoprotein,174925,174971)
+FN (PDGF-activated,174925,174939)
+
+Document: 1534
+FN (recombinant H19 allele,232958,232980)
+FN (neo replacement cassette,233032,233056)
+
+Document: 1193
+FP (Asn-285,176259,176266)
+FP (Lys-220,176284,176291)
+FP (Gln-220 second-site mutants,176296,176323)
+FP (Asn-285 mutant,176331,176345)
+
+Document: 1265
+FN (ZFP genes,187901,187910)
+
+Document: 1821
+FP (adjacent LTR.,279291,279304)
+
+Document: 843
+FP (IIb HLP,128124,128131)
+
+Document: 924
+FP (murine ornithine decarboxylase mRNAs,140223,140259)
+FN (human and murine ornithine decarboxylase mRNAs,140213,140259)
+
+Document: 789
+FN (C subunits,120489,120499)
+
+Document: 1202
+FN (SAL6,177790,177794)
+FN (spt14,177830,177835)
+
+Document: 870
+FP (seco-steroid hormone 1,25-dihydroxyvitamin D3,132042,132087)
+
+Document: 1220
+FN (ALAD,180580,180584)
+
+Document: 224
+FP (A2,34550,34552)
+
+Document: 637
+FN (coat colour mutation slaty,97196,97222)
+
+Document: 233
+FP (nuclear transcription factors,36108,36137)
+FN (LDH/C proximal promoter region,36171,36201)
+
+Document: 296
+FP (SAGA,45341,45345)
+FN (SAGA complex,45341,45353)
+
+Document: 206
+FP (guanine nucleotide exchange factor C3G,31617,31655)
+FN (guanine nucleotide exchange factor,31617,31651)
+FN (C3G,31652,31655)
+FN (PDGF-stimulated,31685,31700)
+
+Document: 305
+FP (WS,46810,46812)
+
+Document: 1426
+FP (psaB mRNA,215049,215058)
+FN (psaB,215049,215053)
+
+Document: 0
+FN (M1Ach-muscarinic receptor,33,58)
+
+
+Exact-Matching-Result
+True Positives:         1262.0
+False Positives:        506.0
+False Negatives:        901.0
+Precision:                      0,713801
+Recall:                         0,583449
+F1 Score:                       0,642076
